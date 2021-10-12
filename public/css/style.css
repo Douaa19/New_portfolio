@@ -1,0 +1,53 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0; }
+
+.header {
+  background-image: url("../public/img/ales-nesetril-Im7lZjxeLhg-unsplash.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  height: 1010px;
+  font-family: "Franklin Gothic Medium"; }
+  .header .container {
+    padding: 1rem 0 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; }
+    .header .container .links ul {
+      display: flex;
+      align-items: center;
+      margin: 0rem;
+      width: max-content; }
+    .header .container .logo img {
+      width: 25%; }
+  .header .hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #AADBE4;
+    position: relative;
+    top: 8rem;
+    text-transform: capitalize; }
+    .header .hero .welcome {
+      font-size: 100px; }
+    .header .hero .name {
+      font-size: 50px; }
+
+ul .link {
+  list-style: none;
+  padding: 0.5rem;
+  margin: 0 1rem; }
+  ul .link a {
+    font-size: 18px;
+    text-decoration: none;
+    color: whitesmoke;
+    text-transform: capitalize; }
+
+main {
+  height: 30vh;
+  background-color: #AADBE4; }
+
+/*# sourceMappingURL=style.css.map */
