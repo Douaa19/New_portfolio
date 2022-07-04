@@ -2,7 +2,9 @@ import React from 'react'
 
 function HearoHeader() {
   return (
-    <div>HearoHeader</div>
+    <>
+    <h1>hearo hader</h1>
+    </>
   )
 }
 
