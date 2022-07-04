@@ -9,6 +9,9 @@ function NavbarComponent() {
     container: {
       fontFamily: "'Montserrat', sans-serif",
       textTransform: "uppercase",
+      position: "absolute",
+      top: 0,
+      right: "8%"
     },
     navbar: {
       display: "flex",
@@ -20,23 +23,23 @@ function NavbarComponent() {
       fontSize: "32px",
     },
     brand: {
-      fontWeight: "600",
+      fontWeight: "bold",
       color: "#FF5959",
       fontSize: "22px",
     },
     links: {
-      fontSize: "12px",
+      fontSize: "16px",
     },
     nav_link: {
       color: "#F4F4F4",
-      padding: "0.5rem 1.8rem",
+      padding: "0.2rem 1.8rem",
       margin: "0 0.5rem",
     },
     nav_btn: {
       color: "#FF5959",
       border: "solid 1px #FF5959",
       borderRadius: "3px",
-      padding: "0.5rem 1.8rem",
+      padding: "0.2rem 1.8rem",
       margin: "0 0 0 0.5rem",
     },
   };
