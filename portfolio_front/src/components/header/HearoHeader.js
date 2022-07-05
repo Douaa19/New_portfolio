@@ -1,6 +1,6 @@
 import React from "react";
 import { Container } from "react-bootstrap";
-import ProfilImg from "../../assets/8G9A0004.JPG";
+import ProfilImg from "../../assets/kevin-ku-w7ZyuGYNpRQ-unsplash.jpg";
 
 function HearoHeader() {
   // ---------------------------
@@ -40,6 +40,8 @@ function HearoHeader() {
       color: "#F4F4F4",
       fontSize: "16px",
       marginTop: "1rem",
+      borderRight: "solid 1px #F4F4F4",
+      padding: "0 8px 0"
     },
   };
   // ---------------------------
