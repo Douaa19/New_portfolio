@@ -1,0 +1,41 @@
+import React from "react";
+import Cards from "./Cards";
+import { Container } from "reactstrap";
+
+function MyServices() {
+  const styles = {
+    container: {
+      padding: "6rem 0",
+      textTransform: "uppercase",
+      fontFamily: "'Montserrat', sans-serif",
+    },
+    content: {
+    //   display: "flex",
+    //   justifyContent: "center",
+    //   aligneItems: "center",
+    },
+    big: {
+      color: "#F4F4F4",
+      fontWeight: "600",
+      fontSize: "40px",
+      width: "max-content",
+      borderBottom: "3px solid #FF5959",
+      letterSpacing: "4px",
+    },
+  };
+
+  return (
+    <div style={{ backgroundColor: "#717BB7" }}>
+      <Container style={styles.container}>
+        <div className="content" style={styles.content}>
+          <h1 style={styles.big}>my services</h1>
+          <div className="cards">
+            <Cards />
+          </div>
+        </div>
+      </Container>
+    </div>
+  );
+}
+
+export default MyServices;
