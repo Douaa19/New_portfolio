@@ -66,6 +66,7 @@ function Description() {
       border: "none",
       fontSize: "16px",
       margin: "1rem 0",
+      letterSpacing: "2px",
     },
   };
   // -----------------------
