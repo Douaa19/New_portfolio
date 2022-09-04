@@ -7,11 +7,13 @@ function Description() {
   // styles
   const styles = {
     container: {
-      // border: "1px solid black",
       display: "flex",
       padding: "0 0 0 4rem",
       textTransform: "uppercase",
       fontFamily: "'Montserrat', sans-serif",
+    },
+    content: {
+      paddingLeft: "5rem",
     },
     small: {
       color: "#FF5959",
@@ -73,7 +75,7 @@ function Description() {
   return (
     <>
       <Container style={styles.container}>
-        <div className="content">
+        <div className="content" style={styles.content}>
           <h2 style={styles.small}>discover</h2>
           <h1 style={styles.big}>about me</h1>
           <div className="text" style={styles.text}>
