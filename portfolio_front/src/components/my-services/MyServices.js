@@ -20,6 +20,7 @@ function MyServices() {
       width: "max-content",
       borderBottom: "3px solid #FF5959",
       letterSpacing: "4px",
+      marginBottom: "2rem"
     },
   };
 
@@ -27,7 +28,9 @@ function MyServices() {
     <div style={{ backgroundColor: "#717BB7" }}>
       <Container style={styles.container}>
         {/* <div className="content"> */}
-        <h1 style={styles.big}>my services</h1>
+        <div className="sectionTitle">
+          <h1 style={styles.big}>my services</h1>
+        </div>
         <div className="cards">
           <Cards />
         </div>
