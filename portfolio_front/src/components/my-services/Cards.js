@@ -1,13 +1,5 @@
 import React from "react";
-import {
-  Card,
-  Container,
-  CardBody,
-  CardText,
-  CardGroup,
-  Row,
-  Col,
-} from "reactstrap";
+import { Card, CardBody, CardText, CardGroup, Row, Col } from "reactstrap";
 import { FaPencilRuler } from "react-icons/fa";
 
 function Cards() {
