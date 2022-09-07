@@ -1,5 +1,6 @@
 import React from "react";
 import { Container } from "reactstrap";
+import Cards from "../my-projects/Crads";
 
 function MyProjects() {
   const styles = {
@@ -30,6 +31,7 @@ function MyProjects() {
         <div className="sectionTitle">
           <h1 style={styles.big}>my services</h1>
         </div>
+        <Cards />
       </Container>
     </div>
   );
