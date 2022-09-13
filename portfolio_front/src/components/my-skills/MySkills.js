@@ -1,17 +1,99 @@
 import React from "react";
 import { Container } from "reactstrap";
 import Skills from "./Skills";
+import {
+  FaHtml5,
+  FaCss3Alt,
+  FaReact,
+  FaPhp,
+  FaLaravel,
+  FaNodeJs,
+  FaDocker,
+  FaGit,
+  FaGithub,
+} from "react-icons/fa";
+import { SiExpress, SiAdobexd, SiMysql } from "react-icons/si";
+import { FiFigma } from "react-icons/fi";
+import { DiMongodb } from "react-icons/di";
+import { AiFillApi } from "react-icons/ai";
+import { IoLogoJavascript } from "react-icons/io";
 
 function MySkills() {
   const myArr = [
-    "html / css",
-    "php / laravel",
-    "nodejs / express",
-    "javascript / react",
-    "adob xd / figma",
-    "mysql / mongodb",
-    "api rest",
-  ];
+    {
+      name: "html",
+      icon: FaHtml5,
+    },
+    {
+      name: "css",
+      icon: FaCss3Alt,
+    },
+    {
+      name: "php",
+      icon: FaPhp,
+    },
+    {
+      name: "laravel",
+      icon: FaLaravel,
+    },
+    {
+      name: "javascript",
+      icon: IoLogoJavascript,
+    },
+    {
+      name: "react",
+      icon: FaReact,
+    },
+    {
+      name: "nodejs",
+      icon: FaNodeJs,
+    },
+    {
+      name: "express",
+      icon: SiExpress,
+    },
+    {
+      name: "mysql",
+      icon: SiMysql,
+    },
+    {
+      name: "mongodb",
+      icon: DiMongodb,
+    },
+    {
+      name: "adobxd",
+      icon: SiAdobexd,
+    },
+    {
+      name: "figma",
+      icon: FiFigma,
+    },
+    {
+      name: "api rest",
+      icon: AiFillApi,
+    },
+    {
+      name: "docker",
+      icon: FaDocker,
+    },
+   {
+      name: "git",
+      icon: FaGit,
+    },
+    {
+      name: "github",
+      icon: FaGithub,
+    },
+    // "html / css",
+    // "php / laravel",
+    // "nodejs / express",
+    // "javascript / react",
+    // "adob xd / figma",
+    // "mysql / mongodb",
+    // "api rest",
+    // "docker",
+    // "git / github"
+];
 
   //   Styles
   const styles = {
