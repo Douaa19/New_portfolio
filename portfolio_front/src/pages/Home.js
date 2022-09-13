@@ -12,7 +12,7 @@ function Home() {
       <About />
       <MyServices />
       <MySkills />
-      {/* <MyProjects /> */}
+      <MyProjects />
     </>
   );
 }

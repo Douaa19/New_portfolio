@@ -49,16 +49,24 @@ function MySkills() {
       icon: FaNodeJs,
     },
     {
-      name: "express",
+      name: "express js",
       icon: SiExpress,
+    },
+    {
+      name: "mongodb",
+      icon: DiMongodb,
     },
     {
       name: "mysql",
       icon: SiMysql,
     },
     {
-      name: "mongodb",
-      icon: DiMongodb,
+      name: "api rest",
+      icon: AiFillApi,
+    },
+    {
+      name: "docker",
+      icon: FaDocker,
     },
     {
       name: "adobxd",
@@ -69,14 +77,6 @@ function MySkills() {
       icon: FiFigma,
     },
     {
-      name: "api rest",
-      icon: AiFillApi,
-    },
-    {
-      name: "docker",
-      icon: FaDocker,
-    },
-   {
       name: "git",
       icon: FaGit,
     },
@@ -93,7 +93,7 @@ function MySkills() {
     // "api rest",
     // "docker",
     // "git / github"
-];
+  ];
 
   //   Styles
   const styles = {
