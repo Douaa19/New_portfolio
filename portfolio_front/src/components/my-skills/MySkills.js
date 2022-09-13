@@ -3,6 +3,17 @@ import { Container } from "reactstrap";
 import Skills from "./Skills";
 
 function MySkills() {
+  const myArr = [
+    "html / css",
+    "php / laravel",
+    "nodejs / express",
+    "javascript / react",
+    "adob xd / figma",
+    "mysql / mongodb",
+    "api rest",
+  ];
+
+  //   Styles
   const styles = {
     container: {
       padding: "6rem 0",
@@ -21,7 +32,7 @@ function MySkills() {
       width: "max-content",
       borderBottom: "3px solid #FF5959",
       letterSpacing: "4px",
-      marginBottom: "2rem",
+      marginBottom: "3rem",
     },
   };
 
@@ -31,7 +42,7 @@ function MySkills() {
         <div className="sectionTitle">
           <h1 style={styles.big}>my skills</h1>
         </div>
-        <Skills />
+        <Skills skills={myArr} />
       </Container>
     </div>
   );
