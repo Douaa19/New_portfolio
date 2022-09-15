@@ -29,13 +29,13 @@ function Skills(skills) {
     element: {
       color: "#EEEEEE",
       fontSize: "24px",
-      borderBottom: "1px solid #EEEEEE",
+      borderBottom: "1px solid #6971A6",
       margin: "0 1rem 4rem 1rem",
       width: "12rem",
       paddingBottom: "0.5rem",
     },
     icon: {
-      color: "#FF5959",
+      color: "#6971A6",
     },
   };
 

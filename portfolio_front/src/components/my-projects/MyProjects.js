@@ -5,7 +5,7 @@ import Cards from "../my-projects/Crads";
 function MyProjects() {
   const styles = {
     container: {
-      padding: "6rem 0",
+      padding: "3rem 0",
       color: "#FFFFFF",
       textTransform: "uppercase",
       fontFamily: "'Montserrat', sans-serif",
@@ -26,10 +26,10 @@ function MyProjects() {
   };
 
   return (
-    <div style={{ backgroundColor: "#717BB7" }}>
+    <div style={{ backgroundColor: "#000" }}>
       <Container style={styles.container}>
         <div className="sectionTitle">
-          <h1 style={styles.big}>my services</h1>
+          <h1 style={styles.big}>my projects</h1>
         </div>
         <Cards />
       </Container>
