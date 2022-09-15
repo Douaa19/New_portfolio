@@ -5,7 +5,7 @@ import { Container } from "reactstrap";
 function MyServices() {
   const styles = {
     container: {
-      padding: "6rem 0",
+      padding: "3rem 0",
       textTransform: "uppercase",
       fontFamily: "'Montserrat', sans-serif",
       display: "flex",
@@ -25,7 +25,7 @@ function MyServices() {
   };
 
   return (
-    <div style={{ backgroundColor: "#717BB7" }}>
+    <div style={{ backgroundColor: "#000" }}>
       <Container style={styles.container}>
         <div className="sectionTitle">
           <h1 style={styles.big}>my services</h1>

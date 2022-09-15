@@ -9,15 +9,13 @@ function About() {
   const styles = {
     container: {
       display: "flex",
-      padding: "6rem 0",
+      padding: "3rem 0",
     },
     div_img: {
       borderRadius: "4px",
       width: "580px",
       height: "auto",
-      padding: "5px",
-      boxShadow: "0px 0px 4px -1px black",
-      backgroundColor: "#676FA3",
+      boxShadow: "0px 0px 4px -1px #FFF",
       display: "flex",
       alignItems: "center",
       justifyContent: "center",
@@ -29,7 +27,7 @@ function About() {
   };
   // -----------------------
   return (
-    <div style={{ backgroundColor: "#676FA3" }}>
+    <div style={{ backgroundColor: "#000000" }}>
       <Container style={styles.container}>
         <div className="image" style={styles.div_img}>
           <img src={Image} alt="img" style={styles.image} />

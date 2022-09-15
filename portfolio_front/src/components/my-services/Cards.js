@@ -6,7 +6,7 @@ function Cards() {
   const styles = {
     card: {
       background: "none",
-      border: "1px solid #FF5959",
+      border: "1px solid #454545",
       width: "26.5rem",
       color: "#FFFFFF",
       marginTop: "1.5rem",
@@ -23,7 +23,7 @@ function Cards() {
       paddingBottom: "0.8rem",
     },
     icon: {
-      color: "#FF5959",
+      color: "#EEEEEE",
       marginLeft: "1rem",
     },
   };

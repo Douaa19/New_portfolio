@@ -84,21 +84,12 @@ function MySkills() {
       name: "github",
       icon: FaGithub,
     },
-    // "html / css",
-    // "php / laravel",
-    // "nodejs / express",
-    // "javascript / react",
-    // "adob xd / figma",
-    // "mysql / mongodb",
-    // "api rest",
-    // "docker",
-    // "git / github"
   ];
 
   //   Styles
   const styles = {
     container: {
-      padding: "6rem 0",
+      padding: "3rem 0",
       color: "#FFFFFF",
       textTransform: "uppercase",
       fontFamily: "'Montserrat', sans-serif",
@@ -119,7 +110,7 @@ function MySkills() {
   };
 
   return (
-    <div style={{ backgroundColor: "#676FA3" }}>
+    <div style={{ backgroundColor: "#000" }}>
       <Container style={styles.container}>
         <div className="sectionTitle">
           <h1 style={styles.big}>my skills</h1>

@@ -59,7 +59,7 @@ function Description() {
       justifyContent: "center",
     },
     btn: {
-      backgroundColor: "#FF5959",
+      backgroundColor: "#676FA3",
       padding: "0.9rem 2rem",
       textTransform: "uppercase",
       fontWeight: "bold",
