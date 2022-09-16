@@ -14,7 +14,7 @@ function Cards() {
       border: "1px solid #FF5959",
       minHeight: "8rem",
       maxHeight: "22rem",
-      padding: "1rem 1rem",
+      padding: "1rem 1.5rem",
       width: "25rem",
       display: "flex",
       flexDirection: "column",
