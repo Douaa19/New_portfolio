@@ -8,10 +8,10 @@ import {
   CardText,
   CardHeader,
 } from "reactstrap";
-import { ReactComponent as IconFront } from "../../assets/icons/front.svg";
-// import IconBack from "../../assets/icons/back.svg";
-// import IconData from "../../assets/icons/db.svg";
-// import IconDesign from "../../assets/icons/design.svg";
+import IconFront from "../../assets/icons/front.png";
+import IconBack from "../../assets/icons/back.png";
+import IconData from "../../assets/icons/db.png";
+import IconDesign from "../../assets/icons/design.png";
 // import IconPlus from "../../assets/icons/plus.svg";
 
 function Skills(skills) {
@@ -53,8 +53,8 @@ function Skills(skills) {
         {/* front card */}
         <Col>
           <Card style={styles.card}>
-            <CardHeader style={{}}>
-              <IconFront />
+            <CardHeader>
+              <img src={IconFront} alt="" />
             </CardHeader>
             <CardBody>
               <div className="head" style={styles.headCard}>
@@ -67,6 +67,7 @@ function Skills(skills) {
                     display: "flex",
                     justifyContent: "space-between",
                     textAlign: "center",
+                    padding: "0.5rem 0",
                   }}
                 >
                   <span style={styles.span}>html</span>
@@ -91,44 +92,7 @@ function Skills(skills) {
         <Col>
           <Card style={styles.card}>
             <CardHeader>
-              
-            </CardHeader>
-            <CardBody>
-              <div className="head" style={styles.headCard}>
-                <h4 style={styles.smallTitle}>front-end</h4>
-              </div>
-              <div className="spans" style={styles.spans}>
-                <div
-                  className=""
-                  style={{
-                    display: "flex",
-                    justifyContent: "space-between",
-                    textAlign: "center",
-                  }}
-                >
-                  <span style={styles.span}>html</span>
-                  <span style={styles.span}>css</span>
-                </div>
-                <div
-                  className=""
-                  style={{
-                    display: "flex",
-                    justifyContent: "space-between",
-                    textAlign: "center",
-                  }}
-                >
-                  <span style={styles.span}>react js</span>
-                  <span style={styles.span}>javascript</span>
-                </div>
-              </div>
-            </CardBody>
-          </Card>
-        </Col>
-        {/* back card */}
-        <Col>
-          <Card style={styles.card}>
-            <CardHeader>
-              <IconFront />
+              <img src={IconBack} alt="" />
             </CardHeader>
             <CardBody>
               <div className="head" style={styles.headCard}>
@@ -141,6 +105,7 @@ function Skills(skills) {
                     display: "flex",
                     justifyContent: "space-between",
                     textAlign: "center",
+                    padding: "0.5rem 0",
                   }}
                 >
                   <span style={styles.span}>php</span>
@@ -165,8 +130,33 @@ function Skills(skills) {
         <Col>
           <Card style={styles.card}>
             <CardHeader>
-              
+              <img src={IconData} alt="" />
             </CardHeader>
+            <CardBody>
+              <div className="head" style={styles.headCard}>
+                <h4 style={styles.smallTitle}>databases</h4>
+              </div>
+              <div className="spans" style={styles.spans}>
+                <div
+                  className=""
+                  style={{
+                    display: "flex",
+                    justifyContent: "space-between",
+                    textAlign: "center",
+                    padding: "0.5rem 0",
+                  }}
+                >
+                  <span style={styles.span}>php</span>
+                  <span style={styles.span}>laravel</span>
+                </div>
+              </div>
+            </CardBody>
+          </Card>
+        </Col>
+        {/* back card */}
+        <Col>
+          <Card style={styles.card}>
+            <CardHeader></CardHeader>
             <CardBody>
               <div className="head" style={styles.headCard}>
                 <h4 style={styles.smallTitle}>front-end</h4>
@@ -200,45 +190,7 @@ function Skills(skills) {
         </Col>
         <Col>
           <Card style={styles.card}>
-            <CardHeader>
-              
-            </CardHeader>
-            <CardBody>
-              <div className="head" style={styles.headCard}>
-                <h4 style={styles.smallTitle}>front-end</h4>
-              </div>
-              <div className="spans" style={styles.spans}>
-                <div
-                  className=""
-                  style={{
-                    display: "flex",
-                    justifyContent: "space-between",
-                    textAlign: "center",
-                  }}
-                >
-                  <span style={styles.span}>html</span>
-                  <span style={styles.span}>css</span>
-                </div>
-                <div
-                  className=""
-                  style={{
-                    display: "flex",
-                    justifyContent: "space-between",
-                    textAlign: "center",
-                  }}
-                >
-                  <span style={styles.span}>react js</span>
-                  <span style={styles.span}>javascript</span>
-                </div>
-              </div>
-            </CardBody>
-          </Card>
-        </Col>
-        <Col>
-          <Card style={styles.card}>
-            <CardHeader>
-            
-            </CardHeader>
+            <CardHeader></CardHeader>
             <CardBody>
               <div className="head" style={styles.headCard}>
                 <h4 style={styles.smallTitle}>front-end</h4>
