@@ -36,7 +36,7 @@ function Contact() {
       width: "50%",
       display: "flex",
       flexDirection: "column",
-      paddingBottom: "3rem"
+      paddingBottom: "3rem",
     },
     input: {
       background: "none",
