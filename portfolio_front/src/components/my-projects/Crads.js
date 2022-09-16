@@ -41,6 +41,7 @@ function Crads() {
     },
     text: {
       color: "#FFF",
+      fontSize: "16px",
     },
   };
 
@@ -53,7 +54,7 @@ function Crads() {
               Project 1
             </CardTitle>
             <h5 style={styles.smallTitle}>technologies</h5>
-            <CardText>
+            <CardText style={styles.text}>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
               enim ad minim Lorem ipsum dolor sit amet, consectetur adipiscing
@@ -67,7 +68,7 @@ function Crads() {
               Project 1
             </CardTitle>
             <h5 style={styles.smallTitle}>technologies</h5>
-            <CardText>
+            <CardText style={styles.text}>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
               enim ad minim Lorem ipsum dolor sit amet, consectetur adipiscing
@@ -81,7 +82,7 @@ function Crads() {
               Project 1
             </CardTitle>
             <h5 style={styles.smallTitle}>technologies</h5>
-            <CardText>
+            <CardText style={styles.text}>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
               enim ad minim Lorem ipsum dolor sit amet, consectetur adipiscing
@@ -95,63 +96,7 @@ function Crads() {
               Project 1
             </CardTitle>
             <h5 style={styles.smallTitle}>technologies</h5>
-            <CardText>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim Lorem ipsum dolor sit amet, consectetur adipiscing
-              elit, sed do eiusmod tempor incidid
-            </CardText>
-          </Card>
-        </Col>
-        <Col sm="5">
-          <Card body style={styles.card}>
-            <CardTitle tag="h5" style={styles.title}>
-              Project 1
-            </CardTitle>
-            <h5 style={styles.smallTitle}>technologies</h5>
-            <CardText>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim Lorem ipsum dolor sit amet, consectetur adipiscing
-              elit, sed do eiusmod tempor incidid
-            </CardText>
-          </Card>
-        </Col>
-        <Col sm="5">
-          <Card body style={styles.card}>
-            <CardTitle tag="h5" style={styles.title}>
-              Project 1
-            </CardTitle>
-            <h5 style={styles.smallTitle}>technologies</h5>
-            <CardText>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim Lorem ipsum dolor sit amet, consectetur adipiscing
-              elit, sed do eiusmod tempor incidid
-            </CardText>
-          </Card>
-        </Col>
-        <Col sm="5">
-          <Card body style={styles.card}>
-            <CardTitle tag="h5" style={styles.title}>
-              Project 1
-            </CardTitle>
-            <h5 style={styles.smallTitle}>technologies</h5>
-            <CardText>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim Lorem ipsum dolor sit amet, consectetur adipiscing
-              elit, sed do eiusmod tempor incidid
-            </CardText>
-          </Card>
-        </Col>
-        <Col sm="5">
-          <Card body style={styles.card}>
-            <CardTitle tag="h5" style={styles.title}>
-              Project 1
-            </CardTitle>
-            <h5 style={styles.smallTitle}>technologies</h5>
-            <CardText>
+            <CardText style={styles.text}>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
               enim ad minim Lorem ipsum dolor sit amet, consectetur adipiscing
