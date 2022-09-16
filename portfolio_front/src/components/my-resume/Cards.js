@@ -1,5 +1,6 @@
 import React from "react";
 import { CardGroup, Row, Col, CardTitle, CardText, Card } from "reactstrap";
+import Shape from "./Shape";
 
 function Cards() {
   // styles
@@ -38,8 +39,13 @@ function Cards() {
       alignItems: "center",
     },
     year: {
-      borderBottom: "1px solid #676FA3",
       marginBottom: "0.5rem",
+    },
+    underline: {
+      borderBottom: "2px solid #676FA3",
+      height: "1px",
+      width: "2rem",
+      marginTop: "0.4rem",
     },
     vline: {
       height: "1.5rem",
@@ -52,9 +58,15 @@ function Cards() {
       borderRadius: "50%",
     },
     circleYear: {
-        display: "flex",
-        textAlign: "right"
-    }
+      display: "flex",
+      justifyContent: "space-between",
+      alignItems: "center",
+      width: "7rem",
+      height: "0.5rem",
+      position: "relative",
+      top: "0",
+      left: "3.1rem",
+    },
   };
 
   return (
@@ -66,10 +78,9 @@ function Cards() {
               <div className="years">
                 <span style={styles.year}>2022 - 2020</span>
               </div>
+              <div className="underline" style={styles.underline}></div>
               <div className="line1" style={styles.vline}></div>
-
               <div className="circle" style={styles.circle}></div>
-
               <div className="line1" style={styles.vline}></div>
             </div>
             <Card body style={styles.card}>
@@ -77,19 +88,50 @@ function Cards() {
                 YouCode - Web developement
               </CardTitle>
               <CardText style={styles.text}>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                cidid
+                Lorem ipsum dolor sit amet, consectetur hfiiquu adipiscing elit,
+                sed do eiusmod tempor errorincididunt ut labore et dolore magna
+                aliqua. Ut enim ad minim Lorem ipsum dolor sit amet Lrem
               </CardText>
             </Card>
-            <div className="lines" style={styles.lines}>
-              <div className="line1" style={styles.vline}></div>
-              <div className="circleYear" style={styles.circleYear}>
-                <div className="circle" style={styles.circle}></div>
-                <span style={styles.year}>2022 - 2020</span>
-              </div>
-              <div className="line1" style={styles.vline}></div>
-            </div>
+          </Col>
+          <Shape />
+          <Col sm="5">
+            <Card body style={styles.card}>
+              <CardTitle tag="h5" style={styles.title}>
+                act school - personal developement
+              </CardTitle>
+              <CardText style={styles.text}>
+                Lorem ipsum dolor sit amet, consectetur hfiiquu adipiscing elit,
+                sed do eiusmod tempor errorincididunt ut labore et dolore magna
+                aliqua. Ut enim ad minim Lorem ipsum dolor sit amet Lrem
+              </CardText>
+            </Card>
+          </Col>
+          <Shape />
+          <Col sm="5">
+            <Card body style={styles.card}>
+              <CardTitle tag="h5" style={styles.title}>
+                coach - gymnastic
+              </CardTitle>
+              <CardText style={styles.text}>
+                Lorem ipsum dolor sit amet, consectetur hfiiquu adipiscing elit,
+                sed do eiusmod tempor errorincididunt ut labore et dolore magna
+                aliqua. Ut enim ad minim Lorem ipsum dolor sit amet Lrem
+              </CardText>
+            </Card>
+          </Col>
+          <Shape />
+          <Col sm="5">
+            <Card body style={styles.card}>
+              <CardTitle tag="h5" style={styles.title}>
+                Colleg degree - mechanical science
+              </CardTitle>
+              <CardText style={styles.text}>
+                Lorem ipsum dolor sit amet, consectetur hfiiquu adipiscing elit,
+                sed do eiusmod tempor errorincididunt ut labore et dolore magna
+                aliqua. Ut enim ad minim Lorem ipsum dolor sit amet Lrem
+              </CardText>
+            </Card>
           </Col>
         </Row>
       </CardGroup>
