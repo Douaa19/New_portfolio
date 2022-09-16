@@ -6,8 +6,54 @@ import MyProjects from "../components/my-projects/MyProjects";
 import MySkills from "../components/my-skills/MySkills";
 import MyResume from "../components/my-resume/MyResume";
 import Contact from "../components/contact/Contact";
+import { GrFacebookOption } from "react-icons/gr";
+import { FaInstagram, FaLinkedinIn } from "react-icons/fa";
 
 function Home() {
+  // styles
+  const styles = {
+    footer: {
+      height: "8rem",
+      background: "#454545",
+      display: "flex",
+      flexDirection: "column",
+      justifyContent: "space-around",
+      alignItems: "center",
+      padding: "1rem 0",
+    },
+    icons: {
+      color: "#FF5959",
+      display: "flex",
+      justifyContent: "space-between",
+      width: "10rem",
+    },
+    divIcon: {
+      border: "1px solid #FF5959",
+      padding: "0.5rem",
+      borderRadius: "50%",
+      cursor: "pointer",
+    },
+    icon: {
+      width: "20px",
+      height: "20px",
+    },
+    address: {
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+      color: "#FF5959",
+    },
+    copyright: {
+      color: "#FFF",
+      fontWeight: "600",
+      fontSize: "16px",
+    },
+    span: {
+      color: "#FF5959",
+      fontSize: "14px"
+    },
+  };
+
   return (
     <>
       <Header />
@@ -17,6 +63,30 @@ function Home() {
       <MyProjects />
       <MyResume />
       <Contact />
+      <div className="footer" style={styles.footer}>
+        <div className="icons" style={styles.icons}>
+          <div className="iconFb" style={styles.divIcon}>
+            <a href="#" style={styles.address}>
+              <GrFacebookOption style={styles.icon} />
+            </a>
+          </div>
+          <div className="iconInsta" style={styles.divIcon}>
+            <a href="#" style={styles.address}>
+              <FaInstagram style={styles.icon} />
+            </a>
+          </div>
+          <div className="iconIn" style={styles.divIcon}>
+            <a href="#" style={styles.address}>
+              <FaLinkedinIn style={styles.icon} />
+            </a>
+          </div>
+        </div>
+        <div className="copyright" style={styles.copyright}>
+          <span>
+            @COPYRIGHT FOR D<span style={styles.span}>OLR</span>
+          </span>
+        </div>
+      </div>
     </>
   );
 }
