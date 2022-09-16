@@ -1,91 +1,8 @@
 import React from "react";
 import { Container } from "reactstrap";
 import Skills from "./Skills";
-import {
-  FaHtml5,
-  FaCss3Alt,
-  FaReact,
-  FaPhp,
-  FaLaravel,
-  FaNodeJs,
-  FaDocker,
-  FaGit,
-  FaGithub,
-} from "react-icons/fa";
-import { SiExpress, SiAdobexd, SiMysql } from "react-icons/si";
-import { FiFigma } from "react-icons/fi";
-import { DiMongodb } from "react-icons/di";
-import { AiFillApi } from "react-icons/ai";
-import { IoLogoJavascript } from "react-icons/io";
 
 function MySkills() {
-  const myArr = [
-    {
-      name: "html",
-      icon: FaHtml5,
-    },
-    {
-      name: "css",
-      icon: FaCss3Alt,
-    },
-    {
-      name: "php",
-      icon: FaPhp,
-    },
-    {
-      name: "laravel",
-      icon: FaLaravel,
-    },
-    {
-      name: "javascript",
-      icon: IoLogoJavascript,
-    },
-    {
-      name: "react",
-      icon: FaReact,
-    },
-    {
-      name: "nodejs",
-      icon: FaNodeJs,
-    },
-    {
-      name: "express js",
-      icon: SiExpress,
-    },
-    {
-      name: "mongodb",
-      icon: DiMongodb,
-    },
-    {
-      name: "mysql",
-      icon: SiMysql,
-    },
-    {
-      name: "api rest",
-      icon: AiFillApi,
-    },
-    {
-      name: "docker",
-      icon: FaDocker,
-    },
-    {
-      name: "adobxd",
-      icon: SiAdobexd,
-    },
-    {
-      name: "figma",
-      icon: FiFigma,
-    },
-    {
-      name: "git",
-      icon: FaGit,
-    },
-    {
-      name: "github",
-      icon: FaGithub,
-    },
-  ];
-
   //   Styles
   const styles = {
     container: {
@@ -115,7 +32,7 @@ function MySkills() {
         <div className="sectionTitle">
           <h1 style={styles.big}>my skills</h1>
         </div>
-        <Skills skills={myArr} />
+        <Skills />
       </Container>
     </div>
   );

@@ -8,11 +8,12 @@ import {
   CardText,
   CardHeader,
 } from "reactstrap";
-import { ReactComponent as IconFront } from "../../assets/icons/front.svg";
-// import IconBack from "../../assets/icons/back.svg";
-// import IconData from "../../assets/icons/db.svg";
-// import IconDesign from "../../assets/icons/design.svg";
-// import IconPlus from "../../assets/icons/plus.svg";
+import IconFront from "../../assets/icons/front.png";
+import IconBack from "../../assets/icons/back.png";
+import IconData from "../../assets/icons/db.png";
+import IconDesign from "../../assets/icons/design.png";
+import IconPlus from "../../assets/icons/plus.png";
+import { IconBase } from "react-icons";
 
 function Skills(skills) {
   console.log("skills", skills.skills);
@@ -21,11 +22,12 @@ function Skills(skills) {
     card: {
       background: "none",
       border: "1px solid #454545",
-      width: "26rem",
+      width: "26.5rem",
       color: "#FFFFFF",
       marginTop: "1.5rem",
       maxHeight: "26.5rem",
       padding: "1rem",
+      height: "14rem",
     },
     smallTitle: {
       fontWeight: "600",
@@ -53,8 +55,8 @@ function Skills(skills) {
         {/* front card */}
         <Col>
           <Card style={styles.card}>
-            <CardHeader style={{}}>
-              <IconFront />
+            <CardHeader>
+              <img src={IconFront} alt="" />
             </CardHeader>
             <CardBody>
               <div className="head" style={styles.headCard}>
@@ -67,6 +69,7 @@ function Skills(skills) {
                     display: "flex",
                     justifyContent: "space-between",
                     textAlign: "center",
+                    padding: "0.5rem 0",
                   }}
                 >
                   <span style={styles.span}>html</span>
@@ -88,47 +91,11 @@ function Skills(skills) {
           </Card>
         </Col>
         {/* front card */}
-        <Col>
-          <Card style={styles.card}>
-            <CardHeader>
-              
-            </CardHeader>
-            <CardBody>
-              <div className="head" style={styles.headCard}>
-                <h4 style={styles.smallTitle}>front-end</h4>
-              </div>
-              <div className="spans" style={styles.spans}>
-                <div
-                  className=""
-                  style={{
-                    display: "flex",
-                    justifyContent: "space-between",
-                    textAlign: "center",
-                  }}
-                >
-                  <span style={styles.span}>html</span>
-                  <span style={styles.span}>css</span>
-                </div>
-                <div
-                  className=""
-                  style={{
-                    display: "flex",
-                    justifyContent: "space-between",
-                    textAlign: "center",
-                  }}
-                >
-                  <span style={styles.span}>react js</span>
-                  <span style={styles.span}>javascript</span>
-                </div>
-              </div>
-            </CardBody>
-          </Card>
-        </Col>
         {/* back card */}
         <Col>
           <Card style={styles.card}>
             <CardHeader>
-              <IconFront />
+              <img src={IconBack} alt="" />
             </CardHeader>
             <CardBody>
               <div className="head" style={styles.headCard}>
@@ -141,6 +108,7 @@ function Skills(skills) {
                     display: "flex",
                     justifyContent: "space-between",
                     textAlign: "center",
+                    padding: "0.5rem 0",
                   }}
                 >
                   <span style={styles.span}>php</span>
@@ -162,14 +130,15 @@ function Skills(skills) {
           </Card>
         </Col>
         {/* back card */}
+        {/* database card */}
         <Col>
           <Card style={styles.card}>
             <CardHeader>
-              
+              <img src={IconData} alt="" />
             </CardHeader>
             <CardBody>
               <div className="head" style={styles.headCard}>
-                <h4 style={styles.smallTitle}>front-end</h4>
+                <h4 style={styles.smallTitle}>databases</h4>
               </div>
               <div className="spans" style={styles.spans}>
                 <div
@@ -178,34 +147,26 @@ function Skills(skills) {
                     display: "flex",
                     justifyContent: "space-between",
                     textAlign: "center",
+                    padding: "0.5rem 0",
                   }}
                 >
-                  <span style={styles.span}>html</span>
-                  <span style={styles.span}>css</span>
-                </div>
-                <div
-                  className=""
-                  style={{
-                    display: "flex",
-                    justifyContent: "space-between",
-                    textAlign: "center",
-                  }}
-                >
-                  <span style={styles.span}>react js</span>
-                  <span style={styles.span}>javascript</span>
+                  <span style={styles.span}>mysql</span>
+                  <span style={styles.span}>mongodb</span>
                 </div>
               </div>
             </CardBody>
           </Card>
         </Col>
+        {/* database card */}
+        {/* design card */}
         <Col>
           <Card style={styles.card}>
             <CardHeader>
-              
+              <img src={IconDesign} alt="" />
             </CardHeader>
             <CardBody>
               <div className="head" style={styles.headCard}>
-                <h4 style={styles.smallTitle}>front-end</h4>
+                <h4 style={styles.smallTitle}>web design</h4>
               </div>
               <div className="spans" style={styles.spans}>
                 <div
@@ -214,34 +175,26 @@ function Skills(skills) {
                     display: "flex",
                     justifyContent: "space-between",
                     textAlign: "center",
+                    padding: "0.5rem 0",
                   }}
                 >
-                  <span style={styles.span}>html</span>
-                  <span style={styles.span}>css</span>
-                </div>
-                <div
-                  className=""
-                  style={{
-                    display: "flex",
-                    justifyContent: "space-between",
-                    textAlign: "center",
-                  }}
-                >
-                  <span style={styles.span}>react js</span>
-                  <span style={styles.span}>javascript</span>
+                  <span style={styles.span}>figma</span>
+                  <span style={styles.span}>adob xd</span>
                 </div>
               </div>
             </CardBody>
           </Card>
         </Col>
+        {/* design card */}
+        {/* other card */}
         <Col>
           <Card style={styles.card}>
             <CardHeader>
-            
+              <img src={IconPlus} alt="" />
             </CardHeader>
             <CardBody>
               <div className="head" style={styles.headCard}>
-                <h4 style={styles.smallTitle}>front-end</h4>
+                <h4 style={styles.smallTitle}>other</h4>
               </div>
               <div className="spans" style={styles.spans}>
                 <div
@@ -250,10 +203,11 @@ function Skills(skills) {
                     display: "flex",
                     justifyContent: "space-between",
                     textAlign: "center",
+                    padding: "0.5rem 0",
                   }}
                 >
-                  <span style={styles.span}>html</span>
-                  <span style={styles.span}>css</span>
+                  <span style={styles.span}>git</span>
+                  <span style={styles.span}>github</span>
                 </div>
                 <div
                   className=""
@@ -263,13 +217,14 @@ function Skills(skills) {
                     textAlign: "center",
                   }}
                 >
-                  <span style={styles.span}>react js</span>
-                  <span style={styles.span}>javascript</span>
+                  <span style={styles.span}>docker</span>
+                  <span style={styles.span}>heroku</span>
                 </div>
               </div>
             </CardBody>
           </Card>
         </Col>
+        {/* other card */}
         <Col></Col>
         {/* Here we can finish the foreach loop "Col" */}
       </Row>
