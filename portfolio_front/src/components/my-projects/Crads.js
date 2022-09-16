@@ -2,10 +2,8 @@ import React from "react";
 import {
   CardGroup,
   Card,
-  CardHeader,
   Row,
   Col,
-  Button,
   CardTitle,
   CardText,
 } from "reactstrap";
