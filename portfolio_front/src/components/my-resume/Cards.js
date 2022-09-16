@@ -40,6 +40,7 @@ function Cards() {
     },
     year: {
       marginBottom: "0.5rem",
+      fontWeight: "600",
     },
     underline: {
       borderBottom: "2px solid #676FA3",

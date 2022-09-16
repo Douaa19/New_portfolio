@@ -29,6 +29,10 @@ function Shape() {
       top: "0",
       left: "3.1rem",
     },
+    year: {
+      marginBottom: "0.5rem",
+      fontWeight: "600",
+    },
   };
 
   return (
