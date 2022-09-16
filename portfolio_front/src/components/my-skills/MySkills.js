@@ -22,7 +22,7 @@ function MySkills() {
       width: "max-content",
       borderBottom: "3px solid #FF5959",
       letterSpacing: "4px",
-      marginBottom: "3rem",
+      marginBottom: "2rem",
     },
   };
 
