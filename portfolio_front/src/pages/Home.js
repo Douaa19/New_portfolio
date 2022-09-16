@@ -5,6 +5,7 @@ import MyServices from "../components/my-services/MyServices";
 import MyProjects from "../components/my-projects/MyProjects";
 import MySkills from "../components/my-skills/MySkills";
 import MyResume from "../components/my-resume/MyResume";
+import Contact from "../components/contact/Contact";
 
 function Home() {
   return (
@@ -15,6 +16,7 @@ function Home() {
       <MySkills />
       <MyProjects />
       <MyResume />
+      <Contact />
     </>
   );
 }
