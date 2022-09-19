@@ -29,6 +29,44 @@ const handleRegister = (req, res) => {
   })();
 };
 
+// login
+const handleLogin = (req, res) => {
+  (async () => {
+    if (!req.body.email) res.json("Email not here!");
+
+    // find user by email
+    const user = await User.findOne({ email: req.body.email });
+    if (!user) {
+      res.json({ message: "User not found!" });
+    } else if (!req.body.password) {
+      res.json({ message: "Password not here!" });
+    } else {
+      await user
+        .comparePasswords(req.body.password)
+        .then((result) => {
+          if (!result) {
+            res.json({ message: "Password incorrect! Please try again." });
+          } else {
+            const id = user._id;
+            const email = user.email;
+            const role = user.role;
+            const token = jwt.sign(
+              { id, email, role },
+              process.env.JWT_ACCESS_SECRET
+            );
+            if (token) {
+              res.json({ token });
+            } else {
+              res.json({ message: "Token doesn't created!" });
+            }
+          }
+        })
+        .catch((err) => console.log({ err }));
+    }
+  })();
+};
+
 module.exports = {
   handleRegister,
+  handleLogin,
 };
