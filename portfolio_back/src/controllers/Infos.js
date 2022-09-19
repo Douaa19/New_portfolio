@@ -26,11 +26,11 @@ const addInfo = (req, res) => {
     phone: req.body.phone,
     email: req.body.email,
     address: req.body.address,
-  }
+  };
 };
 
 module.exports = {
   getInfos,
   getOne,
-  addInfo
+  addInfo,
 };
