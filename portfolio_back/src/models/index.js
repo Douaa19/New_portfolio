@@ -4,6 +4,7 @@ const Technology = require("./Technologies");
 const Part = require("./Parts");
 const Info = require("./Infos");
 const Client = require("./Clients");
+const User = require("./Users");
 
 module.exports = {
   Project,
@@ -12,4 +13,5 @@ module.exports = {
   Part,
   Info,
   Client,
+  User,
 };
