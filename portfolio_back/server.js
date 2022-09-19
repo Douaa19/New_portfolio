@@ -11,29 +11,30 @@ require("./src/config/mongoose");
 // require authorization
 
 // require routes
-// const {
-//   authRoutes,
-//   partsRoutes,
-//   projectsRoutes,
-//   clientsRoutes,
-//   servicesRoutes,
-//   technossRoutes,
-// } = require("./src/routes");
+const {
+  authRoutes,
+  //   partsRoutes,
+  //   projectsRoutes,
+  //   clientsRoutes,
+  //   servicesRoutes,
+  //   technosRoutes,
+} = require("./src/routes");
 
 // using middlewares
 app.use(morgan("tiny"));
 app.use(cors());
 app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 
 //
-app.get("/api", (req, res) => {
+app.get("/", (req, res) => {
   res.json({
     message: "Welcome to my portfolio",
   });
 });
 
 // routes
-
+app.use("/auth", authRoutes);
 // listen to the port
 app.listen(PORT, () => {
   console.log(`server is running in: http://localhost:${PORT}`);

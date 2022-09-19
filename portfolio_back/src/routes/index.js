@@ -2,7 +2,7 @@ const projectsRoutes = require("./projectsRoutes");
 const servicesRoutes = require("./servicesRoutes");
 const clientsRoutes = require("./clientsRoutes");
 const partsRoutes = require("./partsRoutes");
-const technossRoutes = require("./technossRoutes");
+const technosRoutes = require("./technosRoutes");
 const authRoutes = require("./authRoutes");
 
 module.exports = {
@@ -10,6 +10,6 @@ module.exports = {
   servicesRoutes,
   clientsRoutes,
   partsRoutes,
-  technossRoutes,
+  technosRoutes,
   authRoutes,
 };
