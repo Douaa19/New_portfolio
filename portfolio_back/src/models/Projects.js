@@ -16,6 +16,10 @@ const Projects = new mongoose.Schema({
     type: String,
     required: false,
   },
+  link: {
+    type: String,
+    required: true,
+  },
 });
 
 const Project = mongoose.model("Projects", Projects);
