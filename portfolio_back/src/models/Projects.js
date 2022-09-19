@@ -7,7 +7,8 @@ const Projects = new mongoose.Schema({
   },
   technologies: [
     {
-      type: String,
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Technology",
       required: true,
     },
   ],
