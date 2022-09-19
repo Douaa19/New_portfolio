@@ -2,18 +2,18 @@ const express = require("express");
 const router = express.Router();
 
 // require controllers
-// const { Infos } = require("../controllers");
+const { Infos } = require("../controllers");
 
 // require authorization
-// const {} = require("../middlewares");
+const { autorizationRole } = require("../middlewares/autorization");
 
 // routes
 
 // get all services
-router.route("/").get();
+router.route("/").get(Infos.getInfos);
 
 // get one service with Id
-router.route("/Id").get();
+router.route("/:Id").get(Infos.getOne);
 
 // add service
 router.route("/").post();
