@@ -23,13 +23,13 @@ const Users = new mongoose.Schema({
   },
 });
 
-Users.pre("save", function (nex) {
+Users.pre("save", function (next) {
   const user = this;
   if (!user.isModified("password")) return next();
 
-  bcrypt.hash(use.password, 10).then((hashedPassword) => {
+  bcrypt.hash(user.password, 10).then((hashedPassword) => {
     user.password = hashedPassword;
-    naxt();
+    next();
   });
 });
 
