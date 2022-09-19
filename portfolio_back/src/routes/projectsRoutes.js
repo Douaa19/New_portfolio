@@ -2,10 +2,10 @@ const express = require("express");
 const router = express.Router();
 
 // require controllers
-const { Projects } = require("../controllers");
+// const { Projects } = require("../controllers");
 
 // require authorization
-const {} = require("../middlewares");
+// const {} = require("../middlewares");
 
 // routes
 
