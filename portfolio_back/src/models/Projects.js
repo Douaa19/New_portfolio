@@ -11,4 +11,12 @@ const Projects = new mongoose.Schema({
       required: true,
     },
   ],
+  description: {
+    type: String,
+    required: false,
+  },
 });
+
+const Project = mongoose.model("Projects", Projects);
+
+module.exports = Project;
