@@ -7,8 +7,17 @@ const Projects = new mongoose.Schema({
   },
   technologies: [
     {
-      type: String,
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Technology",
       required: true,
     },
   ],
+  description: {
+    type: String,
+    required: false,
+  },
 });
+
+const Project = mongoose.model("Projects", Projects);
+
+module.exports = Project;
