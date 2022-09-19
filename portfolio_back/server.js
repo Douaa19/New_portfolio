@@ -13,6 +13,7 @@ require("./src/config/mongoose");
 // require routes
 const {
   authRoutes,
+  infosRoutes,
   //   partsRoutes,
   //   projectsRoutes,
   //   clientsRoutes,

@@ -4,6 +4,7 @@ const clientsRoutes = require("./clientsRoutes");
 const partsRoutes = require("./partsRoutes");
 const technosRoutes = require("./technosRoutes");
 const authRoutes = require("./authRoutes");
+const infosRoutes = require("./infosRoutes");
 
 module.exports = {
   projectsRoutes,
@@ -12,4 +13,5 @@ module.exports = {
   partsRoutes,
   technosRoutes,
   authRoutes,
+  infosRoutes,
 };
