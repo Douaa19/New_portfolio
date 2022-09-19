@@ -5,23 +5,35 @@ const router = express.Router();
 const { Infos } = require("../controllers");
 
 // require authorization
-const { autorizationRole } = require("../middlewares/autorization");
+const {
+  autorizationRole,
+  authorization,
+  authorizationRole,
+} = require("../middlewares/autorization");
 
 // routes
 
-// get all services
+// get all infos
 router.route("/").get(Infos.getInfos);
 
-// get one service with Id
-router.route("/:Id").get(Infos.getOne);
+// get one info with Id
+router.route("/:Id").get(
+  // authorization,
+  // authorizationRole("admin"),
+  Infos.getOne
+);
 
-// add service
-router.route("/").post();
+// add info
+router.route("/").post(
+//   authorization,
+//   authorizationRole("admin"),
+  Infos.addInfo
+);
 
-// delete service with Id
+// delete info with Id
 router.route("/Id").delete();
 
-// update service
+// update info
 router.route("/Id").put();
 
 module.exports = router;
