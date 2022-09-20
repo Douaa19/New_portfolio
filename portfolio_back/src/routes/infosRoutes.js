@@ -18,29 +18,29 @@ router.route("/").get(Infos.getInfos);
 
 // get one info with Id
 router.route("/:Id").get(
-  // authorization,
-  // authorizationRole("admin"),
+  authorization,
+  authorizationRole("admin"),
   Infos.getOne
 );
 
 // add info
 router.route("/").post(
-  //   authorization,
-  //   authorizationRole("admin"),
+    authorization,
+    authorizationRole("admin"),
   Infos.addInfo
 );
 
 // delete info with Id
 router.route("/:Id").delete(
-  //   authorization,
-  //   authorizationRole("admin"),
+    authorization,
+    authorizationRole("admin"),
   Infos.deleteInfo
 );
 
 // update info
 router.route("/:Id").put(
-  //   authorization,
-  //   authorizationRole("admin"),
+    authorization,
+    authorizationRole("admin"),
   Infos.updateInfo
 );
 
