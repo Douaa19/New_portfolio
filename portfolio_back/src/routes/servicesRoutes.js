@@ -37,6 +37,10 @@ router.route("/:Id").delete(
 );
 
 // update service
-router.route("/:Id").put();
+router.route("/:Id").put(
+    authorization,
+    authorizationRole("admin"),
+    Services.updateService
+);
 
 module.exports = router;

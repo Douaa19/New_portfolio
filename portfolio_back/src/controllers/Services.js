@@ -45,9 +45,20 @@ const deleteService = async (req, res) => {
   });
 };
 
+// update service
+const updateService = async (req, res) => {
+  await Service.findByIdAndUpdate(req.params.Id, req.body).then((response) => {
+    if (!response) {
+      res.json({ message: "Service not updated!" });
+    }
+    res.status(200).json({ message: "Service updated successfully!" });
+  });
+};
+
 module.exports = {
   getServices,
   getService,
   addService,
   deleteService,
+  updateService,
 };
