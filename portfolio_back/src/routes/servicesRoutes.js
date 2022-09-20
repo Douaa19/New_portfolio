@@ -16,10 +16,18 @@ const {
 router.route("/").get(Services.getServices);
 
 // get one service with Id
-router.route("/:Id").get(authorization, authorizationRole("admin"));
+router
+  .route("/:Id")
+  .get(authorization, authorizationRole("admin"), Services.getService);
 
 // add service
-router.route("/").post();
+router
+  .route("/")
+  .post(
+    authorization,
+    authorizationRole("admin"),
+    Services.addService
+);
 
 // delete service with Id
 router.route("/:Id").delete();
