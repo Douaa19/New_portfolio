@@ -16,15 +16,17 @@ const {
 router.route("/").get(Projects.getProjects);
 
 // get one project with Id
-router.route("/Id").get();
+router
+  .route("/:Id")
+  .get(authorization, authorizationRole("admin"), Projects.getProject);
 
 // add project
 router.route("/").post();
 
 // delete project with Id
-router.route("/Id").delete();
+router.route("/:Id").delete();
 
 // update project
-router.route("/Id").put();
+router.route("/:Id").put();
 
 module.exports = router;
