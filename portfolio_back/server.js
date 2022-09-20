@@ -14,7 +14,7 @@ require("./src/config/mongoose");
 const {
   authRoutes,
   infosRoutes,
-  //   partsRoutes,
+  partsRoutes,
   //   projectsRoutes,
   //   clientsRoutes,
   servicesRoutes,
@@ -38,6 +38,7 @@ app.get("/", (req, res) => {
 app.use("/auth", authRoutes);
 app.use("/infos", infosRoutes);
 app.use("/services", servicesRoutes);
+app.use("/parts", partsRoutes);
 // listen to the port
 app.listen(PORT, () => {
   console.log(`server is running in: http://localhost:${PORT}`);

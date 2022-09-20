@@ -5,11 +5,14 @@ const Parts = new mongoose.Schema({
     type: String,
     required: true,
   },
-  technos_id: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: "Technology",
-    reduired: true,
-  },
+  technos_id: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Technology",
+      reduired: true,
+      default: null,
+    },
+  ],
 });
 
 const Part = mongoose.model("Parts", Parts);
