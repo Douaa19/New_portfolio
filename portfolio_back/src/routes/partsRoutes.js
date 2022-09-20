@@ -26,6 +26,8 @@ router
   .delete(authorization, authorizationRole("admin"), Parts.deletePart);
 
 // update part
-router.route("/:Id").put();
+router
+  .route("/:Id")
+  .put(authorization, authorizationRole("admin"), Parts.updatePart);
 
 module.exports = router;
