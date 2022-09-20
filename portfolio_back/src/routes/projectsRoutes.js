@@ -26,7 +26,9 @@ router
   .post(authorization, authorizationRole("admin"), Projects.addProject);
 
 // delete project with Id
-router.route("/:Id").delete(authorization, authorizationRole("admin"));
+router
+  .route("/:Id")
+  .delete(authorization, authorizationRole("admin"), Projects.deleteProject);
 
 // update project
 router.route("/:Id").put(authorization, authorizationRole("admin"));

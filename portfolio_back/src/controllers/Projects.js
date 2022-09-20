@@ -37,8 +37,19 @@ const addProject = async (req, res) => {
   });
 };
 
+// delete project
+const deleteProject = async (req, res) => {
+  await Project.findByIdAndDelete({ _id: req.params.Id }).then((response) => {
+    if (!response) {
+      res.json({ message: "Project not deleted!" });
+    }
+    res.status(200).json({ message: "Project deleted successfully!" });
+  });
+};
+
 module.exports = {
   getProjects,
   getProject,
   addProject,
+  deleteProject,
 };
