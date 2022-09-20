@@ -42,8 +42,18 @@ const addInfo = async (req, res) => {
   }
 };
 
+// delete one info
+const deleteInfo = async (req, res) => {
+  await Info.findByIdAndDelete({ _id: req.params.Id }).then((infoDeleted) => {
+    if (infoDeleted) {
+      res.status(200).json({ message: "Info deleted successfully!" });
+    }
+  });
+};
+
 module.exports = {
   getInfos,
   getOne,
   addInfo,
+  deleteInfo,
 };

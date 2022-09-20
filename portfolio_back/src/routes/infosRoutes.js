@@ -25,15 +25,19 @@ router.route("/:Id").get(
 
 // add info
 router.route("/").post(
-//   authorization,
-//   authorizationRole("admin"),
+  //   authorization,
+  //   authorizationRole("admin"),
   Infos.addInfo
 );
 
 // delete info with Id
-router.route("/Id").delete();
+router.route("/:Id").delete(
+  //   authorization,
+  //   authorizationRole("admin"),
+  Infos.deleteInfo
+);
 
 // update info
-router.route("/Id").put();
+router.route("/:Id").put();
 
 module.exports = router;
