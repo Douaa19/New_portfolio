@@ -47,9 +47,26 @@ const deleteProject = async (req, res) => {
   });
 };
 
+// update project
+const updateProject = async (req, res) => {
+  await Project.findByIdAndUpdate(req.params.Id, {
+    project_name: req.body.project_name,
+    technologies: req.body.technologies ? req.body.technologies : [],
+    description: req.body.description,
+    description: req.body.link,
+  }).then((response) => {
+    if (!response) {
+      res.json({ message: "Project not updated!" });
+    } else {
+      res.status(200).json({ message: "Project updated successfully!" });
+    }
+  });
+};
+
 module.exports = {
   getProjects,
   getProject,
   addProject,
   deleteProject,
+  updateProject,
 };

@@ -31,6 +31,8 @@ router
   .delete(authorization, authorizationRole("admin"), Projects.deleteProject);
 
 // update project
-router.route("/:Id").put(authorization, authorizationRole("admin"));
+router
+  .route("/:Id")
+  .put(authorization, authorizationRole("admin"), Projects.updateProject);
 
 module.exports = router;
