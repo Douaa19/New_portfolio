@@ -2,15 +2,18 @@ const express = require("express");
 const router = express.Router();
 
 // require controllers
-// const { Projects } = require("../controllers");
+const { Projects } = require("../controllers");
 
 // require authorization
-// const {} = require("../middlewares");
+const {
+  authorization,
+  authorizationRole,
+} = require("../middlewares/autorization");
 
 // routes
 
 // get all projects
-router.route("/").get();
+router.route("/").get(Projects.getProjects);
 
 // get one project with Id
 router.route("/Id").get();
