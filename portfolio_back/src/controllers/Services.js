@@ -35,8 +35,19 @@ const addService = async (req, res) => {
   });
 };
 
+// delete service
+const deleteService = async (req, res) => {
+  await Service.findByIdAndDelete(req.params.Id).then((response) => {
+    if (!response) {
+      res.json({ message: "Service not deleted!" });
+    }
+    res.status(200).json({ message: "Service deleted successfully!" });
+  });
+};
+
 module.exports = {
   getServices,
   getService,
   addService,
+  deleteService,
 };

@@ -30,7 +30,11 @@ router
 );
 
 // delete service with Id
-router.route("/:Id").delete();
+router.route("/:Id").delete(
+    authorization,
+    authorizationRole("admin"),
+    Services.deleteService
+);
 
 // update service
 router.route("/:Id").put();
