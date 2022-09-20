@@ -20,7 +20,25 @@ const getProject = async (req, res) => {
   });
 };
 
+// add project
+const addProject = async (req, res) => {
+  await Project.create({
+    project_name: req.body.project_name,
+    technologies: req.body.technologies,
+    description: req.body.description,
+    link: req.body.link,
+  }).then((response) => {
+    if (!response) {
+      res.json({ message: "Project not created!" });
+    }
+    res
+      .status(200)
+      .json({ message: "Project created successfully!", response });
+  });
+};
+
 module.exports = {
   getProjects,
   getProject,
+  addProject,
 };

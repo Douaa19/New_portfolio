@@ -21,12 +21,14 @@ router
   .get(authorization, authorizationRole("admin"), Projects.getProject);
 
 // add project
-router.route("/").post();
+router
+  .route("/")
+  .post(authorization, authorizationRole("admin"), Projects.addProject);
 
 // delete project with Id
-router.route("/:Id").delete();
+router.route("/:Id").delete(authorization, authorizationRole("admin"));
 
 // update project
-router.route("/:Id").put();
+router.route("/:Id").put(authorization, authorizationRole("admin"));
 
 module.exports = router;
