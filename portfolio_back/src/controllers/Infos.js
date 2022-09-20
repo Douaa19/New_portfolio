@@ -1,4 +1,3 @@
-const mongoose = require("mongoose");
 const { Info } = require("../models");
 
 // get all infos

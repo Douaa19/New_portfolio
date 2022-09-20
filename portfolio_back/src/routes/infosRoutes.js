@@ -6,7 +6,6 @@ const { Infos } = require("../controllers");
 
 // require authorization
 const {
-  autorizationRole,
   authorization,
   authorizationRole,
 } = require("../middlewares/autorization");
