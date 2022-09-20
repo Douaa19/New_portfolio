@@ -23,7 +23,18 @@ const addPart = async (req, res) => {
   });
 };
 
+// delte part
+const deletePart = async (req, res) => {
+  await Part.findByIdAndDelete(req.params.Id).then((response) => {
+    if (!response) {
+      res.json({ message: "Part doesn't deleted!" });
+    }
+    res.status(200).json({ message: "Part deleted successfully!" });
+  });
+};
+
 module.exports = {
   getParts,
   addPart,
+  deletePart,
 };
