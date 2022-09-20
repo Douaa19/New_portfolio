@@ -15,7 +15,7 @@ const {
   authRoutes,
   infosRoutes,
   partsRoutes,
-  //   projectsRoutes,
+  projectsRoutes,
   //   clientsRoutes,
   servicesRoutes,
   //   technosRoutes,
@@ -39,6 +39,7 @@ app.use("/auth", authRoutes);
 app.use("/infos", infosRoutes);
 app.use("/services", servicesRoutes);
 app.use("/parts", partsRoutes);
+app.use("/projects", projectsRoutes);
 // listen to the port
 app.listen(PORT, () => {
   console.log(`server is running in: http://localhost:${PORT}`);
