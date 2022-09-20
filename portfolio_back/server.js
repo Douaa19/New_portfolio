@@ -17,7 +17,7 @@ const {
   //   partsRoutes,
   //   projectsRoutes,
   //   clientsRoutes,
-  //   servicesRoutes,
+  servicesRoutes,
   //   technosRoutes,
 } = require("./src/routes");
 
@@ -37,6 +37,7 @@ app.get("/", (req, res) => {
 // routes
 app.use("/auth", authRoutes);
 app.use("/infos", infosRoutes);
+app.use("/services", servicesRoutes);
 // listen to the port
 app.listen(PORT, () => {
   console.log(`server is running in: http://localhost:${PORT}`);
