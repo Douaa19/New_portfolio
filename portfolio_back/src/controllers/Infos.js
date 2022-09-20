@@ -21,12 +21,25 @@ const getOne = async (req, res) => {
 };
 
 // add info
-const addInfo = (req, res) => {
+const addInfo = async (req, res) => {
   const infos = {
     phone: req.body.phone,
     email: req.body.email,
     address: req.body.address,
   };
+  if (infos) {
+    await Info.create({
+      phone: infos.phone,
+      email: infos.email,
+      address: infos.address,
+    })
+      .then((newInfo) => {
+        res.status(200).json({ message: "Info created" });
+      })
+      .catch((err) => console.log(err));
+  } else {
+    console.log("Infos are not complet!");
+  }
 };
 
 module.exports = {

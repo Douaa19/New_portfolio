@@ -3,15 +3,22 @@ const mongoose = require("mongoose");
 const Infos = new mongoose.Schema({
   phone: {
     type: Number,
-    required: true,
+    match: [
+      /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im,
+      "Invalid format",
+    ],
+    required: false,
+    default: null,
   },
   email: {
     type: String,
-    required: true,
+    required: false,
+    default: null,
   },
   address: {
     type: String,
-    required: true,
+    required: false,
+    default: null,
   },
 });
 
