@@ -21,16 +21,49 @@ const getOne = async (req, res) => {
 };
 
 // add info
-const addInfo = (req, res) => {
+const addInfo = async (req, res) => {
   const infos = {
     phone: req.body.phone,
     email: req.body.email,
     address: req.body.address,
   };
+  if (infos) {
+    await Info.create({
+      phone: infos.phone,
+      email: infos.email,
+      address: infos.address,
+    })
+      .then((newInfo) => {
+        res.status(200).json({ message: "Info created" });
+      })
+      .catch((err) => console.log(err));
+  } else {
+    console.log("Infos are not complet!");
+  }
+};
+
+// delete one info
+const deleteInfo = async (req, res) => {
+  await Info.findByIdAndDelete({ _id: req.params.Id }).then((infoDeleted) => {
+    if (infoDeleted) {
+      res.status(200).json({ message: "Info deleted successfully!" });
+    }
+  });
+};
+
+// update info
+const updateInfo = async (req, res) => {
+  await Info.findByIdAndUpdate(req.params.Id, req.body).then((infoUpdated) => {
+    if (infoUpdated) {
+      res.status(200).json({ message: "Info updated successfully!" });
+    }
+  });
 };
 
 module.exports = {
   getInfos,
   getOne,
   addInfo,
+  deleteInfo,
+  updateInfo,
 };
