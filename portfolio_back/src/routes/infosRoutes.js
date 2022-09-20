@@ -38,6 +38,10 @@ router.route("/:Id").delete(
 );
 
 // update info
-router.route("/:Id").put();
+router.route("/:Id").put(
+  //   authorization,
+  //   authorizationRole("admin"),
+  Infos.updateInfo
+);
 
 module.exports = router;

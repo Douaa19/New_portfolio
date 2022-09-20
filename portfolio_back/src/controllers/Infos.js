@@ -51,9 +51,19 @@ const deleteInfo = async (req, res) => {
   });
 };
 
+// update info
+const updateInfo = async (req, res) => {
+  await Info.findByIdAndUpdate(req.params.Id, req.body).then((infoUpdated) => {
+    if (infoUpdated) {
+      res.status(200).json({ message: "Info updated successfully!" });
+    }
+  });
+};
+
 module.exports = {
   getInfos,
   getOne,
   addInfo,
   deleteInfo,
+  updateInfo,
 };
