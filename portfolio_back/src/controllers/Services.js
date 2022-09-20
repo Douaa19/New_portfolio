@@ -21,8 +21,18 @@ const getService = async (req, res) => {
 };
 
 // add service
-const addService = (req, res) => {
-  console.log(req.body);
+const addService = async (req, res) => {
+  await Service.create({
+    service_name: req.body.service_name,
+    description: req.body.description,
+  }).then((response) => {
+    if (!response) {
+      res.json({ message: "Service doesn't created!" });
+    }
+    res
+      .status(200)
+      .json({ message: "Service created successfully!", response });
+  });
 };
 
 module.exports = {

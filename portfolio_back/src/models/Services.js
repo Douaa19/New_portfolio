@@ -8,6 +8,8 @@ const Services = new mongoose.Schema({
   description: {
     type: String,
     required: false,
+    minlength: [20, "The text must be greater than 20 characters"],
+    maxlength: [200, "The text must be less than 50 characters"],
   },
 });
 
