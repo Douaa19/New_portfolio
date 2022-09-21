@@ -18,7 +18,7 @@ const {
   projectsRoutes,
   servicesRoutes,
   technosRoutes,
-  //   clientsRoutes,
+  clientsRoutes,
 } = require("./src/routes");
 
 // using middlewares
@@ -41,6 +41,7 @@ app.use("/services", servicesRoutes);
 app.use("/parts", partsRoutes);
 app.use("/projects", projectsRoutes);
 app.use("/technos", technosRoutes);
+app.use("/client", clientsRoutes);
 // listen to the port
 app.listen(PORT, () => {
   console.log(`server is running in: http://localhost:${PORT}`);
