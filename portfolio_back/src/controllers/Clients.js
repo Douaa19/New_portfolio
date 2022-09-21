@@ -3,7 +3,7 @@ const nodemailer = require("nodemailer");
 
 // store clients infos and send yhe message to my mail box
 const sendMessage = async (req, res) => {
-  const client = {
+  let client = {
     client_name: req.body.name,
     client_email: req.body.email,
     message: req.body.message,
@@ -12,13 +12,19 @@ const sendMessage = async (req, res) => {
   if (!client) {
     res.json({ message: "Input is empty! Please check your informations." });
   }
-  await Client.create(client).then((response) => {
-    if (!response) {
-      res.json({ message: "The client not created!" });
+
+  await Client.findOne({
+    client_name: client.client_name,
+    client_email: client.client_email,
+  }).then((myClient) => {
+    if (!myClient) {
+      Client.create(client).then((response) => {
+        if (!response) {
+          res.json({ message: "The client not created!" });
+        }
+      });
     }
-
-    // ------------------------------------------
-
+    // send mail
     const transporter = nodemailer.createTransport({
       service: "hotmail",
       auth: {
@@ -26,18 +32,16 @@ const sendMessage = async (req, res) => {
         pass: "douaalarif1997",
       },
     });
-    // console.log(transporter);
 
     const mailOptions = {
       from: `"Client" <douaa.larif@outlook.fr>`,
       to: "doua.larif@gmail.com",
       subject: "Message",
       html: `
-            <h3>From your client</h3>
-            <p>${client.message}</p>
-        `,
+          <h3>From your client</h3>
+          <p>${client.message}</p>
+      `,
     };
-    // console.log(mailOptions);
 
     transporter.sendMail(mailOptions, (error, info) => {
       if (error) {
@@ -50,7 +54,14 @@ const sendMessage = async (req, res) => {
 };
 
 // get my clients
-const getClients = (req, res) => {};
+const getClients = async (req, res) => {
+  await Client.find().then((clients) => {
+    if (!clients) {
+      res.json({ message: "Clients not found!" });
+    }
+    res.status(200).json(clients);
+  });
+};
 
 module.exports = {
   sendMessage,

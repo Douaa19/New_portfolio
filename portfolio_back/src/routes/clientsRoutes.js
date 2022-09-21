@@ -13,7 +13,9 @@ const {
 // routes
 
 // get all clients
-router.route("/").get();
+router
+  .route("/")
+  .get(authorization, authorizationRole("admin"), Clients.getClients);
 
 // sent message to admin
 router.route("/message").post(Clients.sendMessage);
