@@ -1,9 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import { Container } from "reactstrap";
 import Sections from "../components/dashboard/Sections";
 import Projects from "../components/dashboard/panels/Projects";
 
 function Dashboard() {
+  // states
+  const [showProjects, setShowProjects] = useState(true);
+
+  // sections
+  const sectionProjects = (e) => {
+    setShowProjects(true);
+  };
+
   // styles
   const styles = {
     body: {
@@ -31,9 +39,13 @@ function Dashboard() {
       <Container style={styles.container}>
         <h2 style={styles.title}>dashboard</h2>
         <Sections />
-        {/* Panels */}
-        <Projects />
-        {/* Panels */}
+        {showProjects === true && (
+          <>
+            {/* Panels */}
+            <Projects />
+            {/* Panels */}
+          </>
+        )}
       </Container>
     </div>
   );
