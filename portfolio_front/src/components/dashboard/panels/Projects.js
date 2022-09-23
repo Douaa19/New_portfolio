@@ -5,7 +5,6 @@ import axios from "axios";
 const PROJECTS_URL = "http://localhost:8080/projects/";
 
 function Projects() {
-  const [pending, setPending] = useState(true);
   const [projects, setProjects] = useState([]);
 
   //   fetch projects
@@ -13,8 +12,6 @@ function Projects() {
     axios.get(`${PROJECTS_URL}`).then((result) => {
       if (result) {
         setProjects(result.data);
-        setPending(false);
-        console.log(result.data);
       }
     });
   }, []);
@@ -41,52 +38,54 @@ function Projects() {
     },
   };
 
-  if (pending === false) {
-    return (
-      <>
-        <Table style={styles.table}>
-          <thead>
-            <tr>
-              <th>Title</th>
-              <th>Technologies</th>
-              <th>Description</th>
-              <th>Link</th>
-              <th>Actions</th>
-            </tr>
-          </thead>
-          <tbody style={styles.body}>
-            {projects.map((project, index) => {
-              return (
-                <tr key={index}>
-                  <td>{project.project_name}</td>
-                  <td>
-                    {project.technologies.map((techno, index) => {
-                      return (
-                        <>
-                          <span key={index}>{techno}</span>
-                        </>
-                      );
-                    })}
-                  </td>
-                  <td>{project.description}</td>
-                  <td>{project.link}</td>
-                  <td className="d-flex justify-content-around">
-                    <Button style={styles.btn} className="bg-danger">delete</Button>
-                    <Button style={styles.btn} className="bg-success">edit</Button>
-                  </td>
-                </tr>
-              );
-            })}
-          </tbody>
-        </Table>
-        <div className="addBtn d-flex justify-content-end">
-          <Button className="bg-primary" style={styles.btn}>
-            project <FaPlus />
-          </Button>
-        </div>
-      </>
-    );
-  }
+  return (
+    <>
+      <Table style={styles.table}>
+        <thead>
+          <tr>
+            <th>Title</th>
+            <th>Technologies</th>
+            <th>Description</th>
+            <th>Link</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody style={styles.body}>
+          {projects.map((project, index) => {
+            return (
+              <tr key={index}>
+                <td>{project.project_name}</td>
+                <td>
+                  {project.technologies.map((techno, index) => {
+                    return (
+                      <>
+                        <span key={index}>{techno}</span>
+                      </>
+                    );
+                  })}
+                </td>
+                <td>{project.description}</td>
+                <td>{project.link}</td>
+                <td className="d-flex justify-content-around">
+                  <Button style={styles.btn} className="bg-danger">
+                    delete
+                  </Button>
+                  <Button style={styles.btn} className="bg-success">
+                    edit
+                  </Button>
+                </td>
+              </tr>
+            );
+          })}
+        </tbody>
+      </Table>
+      <div className="addBtn d-flex justify-content-end">
+        <Button className="bg-primary" style={styles.btn}>
+          project <FaPlus />
+        </Button>
+      </div>
+    </>
+  );
 }
 
 export default Projects;

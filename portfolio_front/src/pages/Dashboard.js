@@ -5,12 +5,8 @@ import Projects from "../components/dashboard/panels/Projects";
 
 function Dashboard() {
   // states
-  const [showProjects, setShowProjects] = useState(true);
+  const [showProjects, setShowProjects] = useState(false);
 
-  // sections
-  const sectionProjects = (e) => {
-    setShowProjects(true);
-  };
 
   // styles
   const styles = {
@@ -38,7 +34,7 @@ function Dashboard() {
     <div className="" style={styles.body}>
       <Container style={styles.container}>
         <h2 style={styles.title}>dashboard</h2>
-        <Sections />
+        <Sections show={showProjects} />
         {showProjects === true && (
           <>
             {/* Panels */}
