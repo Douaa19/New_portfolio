@@ -1,7 +1,7 @@
 import React from "react";
 import { Button, Card, Col, Row } from "reactstrap";
 
-function Sections() {
+function Sections(show) {
   // styles
   const styles = {
     card: {
@@ -24,53 +24,37 @@ function Sections() {
     },
   };
 
-  const showProject = () => {
-    
-  }
-
   return (
     <div>
       <Row>
         <Col sm="3">
           <Card style={styles.card}>
-            <a href="" style={styles.link}>
-              <Button style={styles.btn} onClick={() => showProject()}>projects</Button>
-            </a>
+            <Button style={styles.btn}>projects</Button>
           </Card>
         </Col>
         <Col sm="3">
           <Card style={styles.card}>
-            <a href="" style={styles.link}>
-              <Button style={styles.btn}>services</Button>
-            </a>
+            <Button style={styles.btn}>services</Button>
           </Card>
         </Col>
         <Col sm="3">
           <Card style={styles.card}>
-            <a href="" style={styles.link}>
-              <Button style={styles.btn}>tachnologies</Button>
-            </a>
+            <Button style={styles.btn}>tachnologies</Button>
           </Card>
         </Col>
         <Col sm="3">
           <Card style={styles.card}>
-            <a href="" style={styles.link}>
-              <Button style={styles.btn}>parts</Button>
-            </a>
+            <Button style={styles.btn}>parts</Button>
           </Card>
         </Col>
         <Col sm="3">
           <Card style={styles.card}>
-            <a href="" style={styles.link}>
-              <Button style={styles.btn}>informations</Button>
-            </a>
+            <Button style={styles.btn}>informations</Button>
           </Card>
         </Col>
         <Col sm="3">
           <Card style={styles.card}>
-            <a href="" style={styles.link}>
-              <Button style={styles.btn}>clinets</Button>
-            </a>
+            <Button style={styles.btn}>clinets</Button>
           </Card>
         </Col>
       </Row>
