@@ -1,7 +1,10 @@
 import React from "react";
 import { Container, Form, Button, FormGroup, Input } from "reactstrap";
 
-function AddForm() {
+function AddForm(addPro) {
+  const hidForm = () => {
+    addPro = false;
+  };
   // styles
   const styles = {
     container: {
@@ -35,6 +38,7 @@ function AddForm() {
       fontSize: "16px",
       background: "#676FA3",
       border: "none",
+      margin: "0 0.2rem",
     },
   };
   return (
@@ -73,9 +77,19 @@ function AddForm() {
             <Input type="checkbox" placeholder="technologies" />
             html
           </FormGroup>
-          <Button variant="primary" type="submit" style={styles.btn}>
-            add project
-          </Button>
+          <div className="btns d-flex">
+            <Button variant="primary" type="submit" style={styles.btn}>
+              add project
+            </Button>
+            <Button
+              variant="warning"
+              type="submit"
+              style={styles.btn}
+              onClick={() => hidForm()}
+            >
+              cancel
+            </Button>
+          </div>
         </Form>
       </Container>
     </>

@@ -10,7 +10,6 @@ function Sections() {
   //
   const showProject = () => {
     dispatch(projectAction(true));
-    console.log(prj);
   };
 
   // styles
