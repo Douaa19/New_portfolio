@@ -1,11 +1,16 @@
 import React, { useEffect, useState } from "react";
 import { Table, Button } from "reactstrap";
 import { FaPlus } from "react-icons/fa";
+import { GiCancel } from "react-icons/gi";
+import { MdDeleteForever, MdModeEdit } from "react-icons/md";
 import axios from "axios";
+import { useDispatch } from "react-redux";
+import { projectAction } from "../../../redux/actions/sctions";
 const PROJECTS_URL = "http://localhost:8080/projects/";
 
 function Projects() {
   const [projects, setProjects] = useState([]);
+  const dispatch = useDispatch();
 
   //   fetch projects
   useEffect(() => {
@@ -15,6 +20,10 @@ function Projects() {
       }
     });
   }, []);
+
+  const hiddProjects = () => {
+    dispatch(projectAction(false));
+  };
 
   //   styles
   const styles = {
@@ -35,11 +44,19 @@ function Projects() {
       border: "none",
       width: "8rem",
       fontSize: "16px",
+      margin: " 0 0.2rem",
+    },
+    icon: {
+      color: "red",
+      cursor: "pointer",
     },
   };
 
   return (
     <>
+      <div className="exit d-flex justify-content-end">
+        <GiCancel onClick={() => hiddProjects()} style={styles.icon} />
+      </div>
       <Table style={styles.table}>
         <thead>
           <tr>
@@ -66,22 +83,22 @@ function Projects() {
                 </td>
                 <td>{project.description}</td>
                 <td>{project.link}</td>
-                <td className="d-flex justify-content-around">
-                  <Button style={styles.btn} className="bg-danger">
-                    delete
+                <div className="d-flex justify-content-around">
+                  <Button className="bg-danger border-danger">
+                    <MdDeleteForever />
                   </Button>
-                  <Button style={styles.btn} className="bg-success">
-                    edit
+                  <Button className="bg-success border-success">
+                    <MdModeEdit />
                   </Button>
-                </td>
+                </div>
               </tr>
             );
           })}
         </tbody>
       </Table>
       <div className="addBtn d-flex justify-content-end">
-        <Button className="bg-primary" style={styles.btn}>
-          project <FaPlus />
+        <Button className="bg-primary border-primary">
+          <FaPlus />
         </Button>
       </div>
     </>

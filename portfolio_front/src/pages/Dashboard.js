@@ -1,13 +1,12 @@
-import React, { useState } from "react";
+import React from "react";
 import { Container } from "reactstrap";
 import Sections from "../components/dashboard/Sections";
 import Projects from "../components/dashboard/panels/Projects";
+import { useSelector } from "react-redux";
 
 function Dashboard() {
-  // states
-  const [showProjects, setShowProjects] = useState(false);
-
-
+  const prj = useSelector((state) => state.showProjects.showProjects);
+console.log(prj);
   // styles
   const styles = {
     body: {
@@ -34,14 +33,10 @@ function Dashboard() {
     <div className="" style={styles.body}>
       <Container style={styles.container}>
         <h2 style={styles.title}>dashboard</h2>
-        <Sections show={showProjects} />
-        {showProjects === true && (
-          <>
-            {/* Panels */}
-            <Projects />
-            {/* Panels */}
-          </>
-        )}
+        <Sections />
+        {/* Panels */}
+        {prj === true && <Projects />}
+        {/* Panels */}
       </Container>
     </div>
   );
