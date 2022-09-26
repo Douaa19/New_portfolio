@@ -4,21 +4,53 @@ import { Container, Form, Button, FormGroup, Input } from "reactstrap";
 function AddForm() {
   // styles
   const styles = {
-    title: {},
-    form: {
-      width: "60%",
+    container: {
+      display: "flex",
+      flexDirection: "column",
+      alignItems: "center",
     },
-    input: {},
+    title: {
+      color: "#FF5959",
+      fontWeight: "bold",
+    },
+    form: {
+      width: "50%",
+      display: "flex",
+      flexDirection: "column",
+      paddingBottom: "3rem",
+    },
+    input: {
+      background: "none",
+      border: "1px solid #454545",
+      textTransform: "uppercase",
+      color: "#D9D9D9",
+      paddingLeft: "1.2rem",
+      fontSize: "16px",
+    },
+    btn: {
+      textTransform: "uppercase",
+      width: "35%",
+      padding: "0.5rem",
+      fontWeight: "bold",
+      fontSize: "16px",
+      background: "#676FA3",
+      border: "none",
+    },
   };
   return (
     <>
-      <Container styles={styles.container}>
+      <Container style={styles.container}>
         <div className="title text-center">
-          <h4>Add project</h4>
+          <h4 style={styles.title}>Add project</h4>
         </div>
         <Form style={styles.form}>
           <FormGroup className="mb-3" controlId="formBasicEmail">
-            <Input type="text" placeholder="project name" nmae="project_name" />
+            <Input
+              type="text"
+              placeholder="project name"
+              style={styles.input}
+              nmae="project_name"
+            />
           </FormGroup>
           <FormGroup className="mb-3" controlId="formBasicEmail">
             <Input
@@ -30,12 +62,18 @@ function AddForm() {
             />
           </FormGroup>
           <FormGroup className="mb-3" controlId="formBasicEmail">
-            <Input type="url" placeholder="link project" name="" />
+            <Input
+              type="url"
+              placeholder="link project"
+              name=""
+              style={styles.input}
+            />
           </FormGroup>
           <FormGroup className="mb-3" controlId="formBasicEmail">
-            <Input type="checkbox" placeholder="technologies" />html
+            <Input type="checkbox" placeholder="technologies" />
+            html
           </FormGroup>
-          <Button variant="primary" type="submit">
+          <Button variant="primary" type="submit" style={styles.btn}>
             add project
           </Button>
         </Form>
