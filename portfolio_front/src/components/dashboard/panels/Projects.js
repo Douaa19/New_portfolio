@@ -19,7 +19,7 @@ function Projects() {
     });
   }, []);
 
-  const hiddeProjects = () => {
+  const hiddProjects = () => {
     dispatch(projectAction(false));
   };
 
@@ -94,7 +94,7 @@ function Projects() {
         <Button
           className="bg-info"
           style={styles.btn}
-          oClick={() => hiddeProjects()}
+          onClick={() => hiddProjects()}
         >
           cancel
         </Button>

@@ -5,7 +5,7 @@ const projectReducer = (state = false, action) => {
     case SHOWPROJECT:
       return {
         ...state,
-        showProjects: true,
+        showProjects: action.payload,
       };
 
     default:

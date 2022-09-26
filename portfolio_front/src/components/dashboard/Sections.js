@@ -9,7 +9,7 @@ function Sections() {
 
   //
   const showProject = () => {
-    dispatch(projectAction());
+    dispatch(projectAction(true));
     console.log(prj);
   };
 
