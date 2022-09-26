@@ -1,16 +1,19 @@
 import React, { useEffect, useState } from "react";
 import { Table, Button } from "reactstrap";
+import AddForm from "./AddForm";
 import { FaPlus } from "react-icons/fa";
 import { GiCancel } from "react-icons/gi";
 import { MdDeleteForever, MdModeEdit } from "react-icons/md";
 import axios from "axios";
 import { useDispatch } from "react-redux";
-import { projectAction } from "../../../redux/actions/sctions";
+import { projectAction } from "../../../../redux/actions/sctions";
 const PROJECTS_URL = "http://localhost:8080/projects/";
 
 function Projects() {
+  // states
   const [projects, setProjects] = useState([]);
   const dispatch = useDispatch();
+  const [addPro, setPro] = useState(false);
 
   //   fetch projects
   useEffect(() => {
@@ -21,8 +24,14 @@ function Projects() {
     });
   }, []);
 
+  // hidden projects
   const hiddProjects = () => {
     dispatch(projectAction(false));
+  };
+
+  // show add project form
+  const addProject = () => {
+    setPro(true);
   };
 
   //   styles
@@ -83,24 +92,31 @@ function Projects() {
                 </td>
                 <td>{project.description}</td>
                 <td>{project.link}</td>
-                <div className="d-flex justify-content-around">
+                <td className="d-flex justify-content-around">
                   <Button className="bg-danger border-danger">
                     <MdDeleteForever />
                   </Button>
                   <Button className="bg-success border-success">
                     <MdModeEdit />
                   </Button>
-                </div>
+                </td>
               </tr>
             );
           })}
         </tbody>
       </Table>
       <div className="addBtn d-flex justify-content-end">
-        <Button className="bg-primary border-primary">
+        <Button
+          className="bg-primary border-primary"
+          onClick={() => addProject()}
+        >
           <FaPlus />
         </Button>
       </div>
+
+      {/* Form add project */}
+      {addPro === true && <AddForm />}
+      {/* Form add project */}
     </>
   );
 }
