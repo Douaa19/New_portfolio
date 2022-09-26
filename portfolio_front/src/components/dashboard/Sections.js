@@ -1,11 +1,10 @@
 import React from "react";
 import { Button, Card, Col, Row } from "reactstrap";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { projectAction } from "../../redux/actions/sctions";
 
 function Sections() {
   const dispatch = useDispatch();
-  const prj = useSelector((state) => state.showProjects.showProjects);
 
   //
   const showProject = () => {
