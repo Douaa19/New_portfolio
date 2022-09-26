@@ -13,7 +13,7 @@ function Projects() {
   // states
   const [projects, setProjects] = useState([]);
   const dispatch = useDispatch();
-  const [addPro, setPro] = useState(false);
+  let [addPro, setPro] = useState(false);
 
   //   fetch projects
   useEffect(() => {
@@ -115,7 +115,7 @@ function Projects() {
       </div>
 
       {/* Form add project */}
-      {addPro === true && <AddForm />}
+      {addPro === true && <AddForm addPro={addPro} />}
       {/* Form add project */}
     </>
   );

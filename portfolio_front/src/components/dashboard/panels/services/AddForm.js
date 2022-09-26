@@ -42,7 +42,7 @@ function AddForm() {
     <>
       <Container style={styles.container}>
         <div className="title text-center">
-          <h4 style={styles.title}>Add project</h4>
+          <h4 style={styles.title}>Add service</h4>
         </div>
         <Form style={styles.form}>
           <FormGroup className="mb-3">
