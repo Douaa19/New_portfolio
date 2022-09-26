@@ -1,7 +1,18 @@
 import React from "react";
 import { Button, Card, Col, Row } from "reactstrap";
+import { useDispatch, useSelector } from "react-redux";
+import { projectAction } from "../../redux/actions/sctions";
 
-function Sections(show) {
+function Sections() {
+  const dispatch = useDispatch();
+  const prj = useSelector((state) => state.showProjects.showProjects);
+
+  //
+  const showProject = () => {
+    dispatch(projectAction());
+    console.log(prj);
+  };
+
   // styles
   const styles = {
     card: {
@@ -29,7 +40,9 @@ function Sections(show) {
       <Row>
         <Col sm="3">
           <Card style={styles.card}>
-            <Button style={styles.btn}>projects</Button>
+            <Button style={styles.btn} onClick={() => showProject()}>
+              projects
+            </Button>
           </Card>
         </Col>
         <Col sm="3">
