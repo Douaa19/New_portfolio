@@ -13,3 +13,16 @@ export async function addPart(data, header) {
       return response;
     });
 }
+
+// delete part
+export async function deletePart(Id, header) {
+  await axios
+    .delete(`${PARTS_URL}${Id}`, {
+      headers: {
+        Authorization: `Bearer ${header}`,
+      },
+    })
+    .then((response) => {
+      return response;
+    });
+}

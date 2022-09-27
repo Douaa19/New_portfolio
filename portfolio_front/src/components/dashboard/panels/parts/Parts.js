@@ -7,7 +7,7 @@ import { MdDeleteForever, MdModeEdit } from "react-icons/md";
 import axios from "axios";
 import { useDispatch } from "react-redux";
 import { partAction } from "../../../../redux/actions/sctions";
-import { deleteService } from "../../../../services/services";
+import { deletePart } from "../../../../services/partsServices";
 const PARTS_URL = "http://localhost:8080/parts/";
 
 function Parts() {
@@ -90,7 +90,7 @@ function Parts() {
                   <Button
                     className="bg-danger border-danger"
                     onClick={() => {
-                      deleteService(part._id, header).then((response) => {
+                      deletePart(part._id, header).then((response) => {
                         window.location = "/dashboard";
                       });
                     }}
