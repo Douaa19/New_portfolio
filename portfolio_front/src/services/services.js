@@ -15,14 +15,14 @@ export async function addService(data, header) {
 }
 
 // delete service
-export async function deleteService(id, header) {
+export async function deleteService(Id, header) {
   await axios
-    .delete(`${SERVICES_URL}${id}`, {
+    .delete(`${SERVICES_URL}${Id}`, {
       headers: {
         Authorization: `Bearer ${header}`,
       },
     })
     .then((response) => {
-      console.log(response.data);
+      return response.data;
     });
 }

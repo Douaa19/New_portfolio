@@ -7,6 +7,7 @@ import { MdDeleteForever, MdModeEdit } from "react-icons/md";
 import axios from "axios";
 import { useDispatch } from "react-redux";
 import { serviceAction } from "../../../../redux/actions/sctions";
+import { deleteService } from "../../../../services/services";
 const SERVICES_URL = "http://localhost:8080/services/";
 
 function Sevices() {
@@ -14,6 +15,8 @@ function Sevices() {
   const [services, setServices] = useState([]);
   const dispatch = useDispatch();
   let [addSer, setSer] = useState(false);
+  const header =
+    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMjg5MzIzMzkxMTIyNWJmZjBkNGQ2MSIsImVtYWlsIjoiZG91YS5sYXJpZkBnbWFpbC5jb20iLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2NjQyNzI1NTB9.YHatDqPv3bm4Ioejlwz16U-1zQ4x17kMoD4aLh1Grtk";
 
   //   fetch projects
   useEffect(() => {
@@ -79,9 +82,19 @@ function Sevices() {
             return (
               <tr key={index}>
                 <td>{service.service_name}</td>
-                <td style={{width: "50%"}}>{service.description}</td>
-                <td className="d-flex justify-content-around align-items-center" style={{border: "none",}}>
-                  <Button className="bg-danger border-danger">
+                <td style={{ width: "50%" }}>{service.description}</td>
+                <td
+                  className="d-flex justify-content-around align-items-center"
+                  style={{ border: "none" }}
+                >
+                  <Button
+                    className="bg-danger border-danger"
+                    onClick={() => {
+                      deleteService(service._id, header).then((response) => {
+                        window.location = "/dashboard";
+                      });
+                    }}
+                  >
                     <MdDeleteForever />
                   </Button>
                   <Button className="bg-success border-success">
