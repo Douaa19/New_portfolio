@@ -1,32 +1,28 @@
 import React, { useState } from "react";
 import { Container, Form, Button, FormGroup, Input } from "reactstrap";
-import { addInfo } from "../../../../services/infosServices";
+import { addPart } from "../../../../services/partsServices";
 
 function AddForm() {
   const header =
     "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMjg5MzIzMzkxMTIyNWJmZjBkNGQ2MSIsImVtYWlsIjoiZG91YS5sYXJpZkBnbWFpbC5jb20iLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2NjQyNzI1NTB9.YHatDqPv3bm4Ioejlwz16U-1zQ4x17kMoD4aLh1Grtk";
   //
   const [values, setValues] = useState({
-    phone: "",
-    email: "",
-    address: "",
+    part_name: "",
+    // technos: "",
   });
 
   // handles
-  const handlePhone = (e) => {
-    setValues({ ...values, phone: e.target.value });
+  const handleName = (e) => {
+    setValues({ ...values, part_name: e.target.value });
   };
-  const handleEmail = (e) => {
-    setValues({ ...values, email: e.target.value });
-  };
-  const handleAddress = (e) => {
-    setValues({ ...values, address: e.target.value });
-  };
+  // const handleTachnos = (e) => {
+  //   setValues({ ...values, technos: e.target.value });
+  // };
 
   // handle submit function
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await addInfo(values, header).then((response) => {
+    await addPart(values, header).then((response) => {
       window.location = "/dashboard";
     });
   };
@@ -71,41 +67,32 @@ function AddForm() {
     <>
       <Container style={styles.container}>
         <div className="title text-center">
-          <h4 style={styles.title}>Add project</h4>
+          <h4 style={styles.title}>Add part</h4>
         </div>
         <Form style={styles.form} method="POST" onSubmit={handleSubmit}>
           <FormGroup className="mb-3">
             <Input
-              type="phone"
-              placeholder="phone"
+              type="text"
+              placeholder="name"
               style={styles.input}
-              nmae="project_name"
-              value={values.phone}
-              onChange={handlePhone}
+              nmae="part_name"
+              value={values.name}
+              onChange={handleName}
             />
           </FormGroup>
-          <FormGroup className="mb-3">
+          {/* <FormGroup className="mb-3">
             <Input
               id="exampleText"
               type="email"
               placeholder="email"
               style={styles.input}
-              value={values.email}
-              onChange={handleEmail}
+              value={values.technos}
+              onChange={handleTachnos}
             />
-          </FormGroup>
-          <FormGroup className="mb-3">
-            <Input
-              type="text"
-              placeholder="address"
-              style={styles.input}
-              value={values.address}
-              onChange={handleAddress}
-            />
-          </FormGroup>
+          </FormGroup> */}
           <div className="btns d-flex">
             <Button type="submit" style={styles.btn}>
-              add info
+              add part
             </Button>
           </div>
         </Form>
