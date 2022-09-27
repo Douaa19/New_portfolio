@@ -1,23 +1,23 @@
 import axios from "axios";
-const PROJECTS_URL = "http://localhost:8080/projects/";
+const SERVICES_URL = "http://localhost:8080/services/";
 
-// add project
-export async function addProject(data, header) {
+// add service
+export async function addService(data, header) {
   await axios
-    .post(`${PROJECTS_URL}`, data, {
+    .post(`${SERVICES_URL}`, data, {
       headers: {
         Authorization: `Bearer ${header}`,
       },
     })
     .then((response) => {
-      return response;
+      return response.data;
     });
 }
 
-// delete project
-export async function deleteProject(Id, header) {
+// delete service
+export async function deleteService(Id, header) {
   await axios
-    .delete(`${PROJECTS_URL}${Id}`, {
+    .delete(`${SERVICES_URL}${Id}`, {
       headers: {
         Authorization: `Bearer ${header}`,
       },

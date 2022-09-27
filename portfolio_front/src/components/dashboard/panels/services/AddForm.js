@@ -1,7 +1,32 @@
-import React from "react";
+import React, { useState } from "react";
 import { Container, Form, Button, FormGroup, Input } from "reactstrap";
+import { addService } from "../../../../services/services";
 
 function AddForm() {
+  const header =
+    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMjg5MzIzMzkxMTIyNWJmZjBkNGQ2MSIsImVtYWlsIjoiZG91YS5sYXJpZkBnbWFpbC5jb20iLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2NjQyNzI1NTB9.YHatDqPv3bm4Ioejlwz16U-1zQ4x17kMoD4aLh1Grtk";
+  //
+  const [values, setValues] = useState({
+    service_name: "",
+    description: "",
+  });
+
+  const handleName = (e) => {
+    setValues({ ...values, service_name: e.target.value });
+  };
+  const handleDescription = (e) => {
+    setValues({ ...values, description: e.target.value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (values) {
+      await addService(values, header).then((response) => {
+        window.location = "/dashboard";
+      });
+    }
+  };
+
   // styles
   const styles = {
     container: {
@@ -44,13 +69,15 @@ function AddForm() {
         <div className="title text-center">
           <h4 style={styles.title}>Add service</h4>
         </div>
-        <Form style={styles.form}>
+        <Form style={styles.form} method="post" onSubmit={handleSubmit}>
           <FormGroup className="mb-3">
             <Input
               type="text"
-              placeholder="project name"
+              placeholder="service name"
               style={styles.input}
-              nmae="project_name"
+              nmae="service_name"
+              value={values.service_name}
+              onChange={handleName}
             />
           </FormGroup>
           <FormGroup className="mb-3">
@@ -59,18 +86,13 @@ function AddForm() {
               type="textarea"
               placeholder="description"
               style={styles.input}
+              value={values.description}
+              onChange={handleDescription}
             />
-          </FormGroup>
-          <FormGroup className="mb-3">
-            <Input type="url" placeholder="link project" style={styles.input} />
-          </FormGroup>
-          <FormGroup className="mb-3">
-            <Input type="checkbox" placeholder="technologies" />
-            html
           </FormGroup>
           <div className="btns d-flex">
             <Button type="submit" style={styles.btn}>
-              add project
+              add service
             </Button>
           </div>
         </Form>

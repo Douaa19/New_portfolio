@@ -1,7 +1,7 @@
 import React from "react";
 import { Button, Card, Col, Row } from "reactstrap";
 import { useDispatch } from "react-redux";
-import { projectAction } from "../../redux/actions/sctions";
+import { projectAction, serviceAction } from "../../redux/actions/sctions";
 
 function Sections() {
   const dispatch = useDispatch();
@@ -9,6 +9,11 @@ function Sections() {
   //
   const showProject = () => {
     dispatch(projectAction(true));
+    dispatch(serviceAction(false));
+  };
+  const showService = () => {
+    dispatch(serviceAction(true));
+    dispatch(projectAction(false));
   };
 
   // styles
@@ -45,7 +50,9 @@ function Sections() {
         </Col>
         <Col sm="3">
           <Card style={styles.card}>
-            <Button style={styles.btn}>services</Button>
+            <Button style={styles.btn} onClick={() => showService()}>
+              services
+            </Button>
           </Card>
         </Col>
         <Col sm="3">
