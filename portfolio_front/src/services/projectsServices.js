@@ -16,13 +16,14 @@ export async function addProject(data, header) {
 
 // delete project
 export async function deleteProject(id, header) {
-  await axios
-    .delete(`${PROJECTS_URL}${id}`, {
-      headers: {
-        Authorization: `Bearer ${header}`,
-      },
-    })
-    .then((response) => {
-      console.log(response.data);
-    });
+    console.log(id)
+//   await axios
+//     .delete(`${PROJECTS_URL}${id}`, {
+//       headers: {
+//         Authorization: `Bearer ${header}`,
+//       },
+//     })
+//     .then((response) => {
+//       console.log(response.data);
+//     });
 }

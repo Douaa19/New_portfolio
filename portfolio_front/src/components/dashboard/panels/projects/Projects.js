@@ -7,6 +7,7 @@ import { MdDeleteForever, MdModeEdit } from "react-icons/md";
 import axios from "axios";
 import { useDispatch } from "react-redux";
 import { projectAction } from "../../../../redux/actions/sctions";
+import { deleteProject } from "../../../../services/projectsServices";
 const PROJECTS_URL = "http://localhost:8080/projects/";
 
 function Projects() {
@@ -14,6 +15,8 @@ function Projects() {
   const [projects, setProjects] = useState([]);
   const dispatch = useDispatch();
   let [addPro, setPro] = useState(false);
+  const header =
+    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMjg5MzIzMzkxMTIyNWJmZjBkNGQ2MSIsImVtYWlsIjoiZG91YS5sYXJpZkBnbWFpbC5jb20iLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2NjQyNzI1NTB9.YHatDqPv3bm4Ioejlwz16U-1zQ4x17kMoD4aLh1Grtk";
 
   //   fetch projects
   useEffect(() => {
@@ -96,7 +99,10 @@ function Projects() {
                   className="d-flex justify-content-around"
                   style={{ border: "none" }}
                 >
-                  <Button className="bg-danger border-danger">
+                  <Button
+                    className="bg-danger border-danger"
+                    onClick={() => deleteProject(project._id, header)}
+                  >
                     <MdDeleteForever />
                   </Button>
                   <Button className="bg-success border-success">
