@@ -1,4 +1,10 @@
-import { SHOWPROJECT, SHOWSERVICE, SHOWINFOS, SHOWCLIENTS } from "./types";
+import {
+  SHOWPROJECT,
+  SHOWSERVICE,
+  SHOWINFOS,
+  SHOWCLIENTS,
+  SHOWPARTS,
+} from "./types";
 
 export const projectAction = (show) => {
   return {
@@ -24,6 +30,13 @@ export const infoAction = (show) => {
 export const clientAction = (show) => {
   return {
     type: SHOWCLIENTS,
+    payload: show,
+  };
+};
+
+export const partAction = (show) => {
+  return {
+    type: SHOWPARTS,
     payload: show,
   };
 };

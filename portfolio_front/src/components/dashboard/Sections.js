@@ -6,35 +6,47 @@ import {
   serviceAction,
   infoAction,
   clientAction,
+  partAction,
 } from "../../redux/actions/sctions";
 
 function Sections() {
   const dispatch = useDispatch();
 
-  //
+  // I should refactorize this miss here!!!!!!!
   const showProject = () => {
     dispatch(projectAction(true));
     dispatch(serviceAction(false));
     dispatch(infoAction(false));
     dispatch(clientAction(false));
+    dispatch(partAction(false));
   };
   const showService = () => {
     dispatch(projectAction(false));
     dispatch(serviceAction(true));
     dispatch(infoAction(false));
     dispatch(clientAction(false));
+    dispatch(partAction(false));
   };
   const showInfos = () => {
     dispatch(serviceAction(false));
     dispatch(projectAction(false));
     dispatch(infoAction(true));
     dispatch(clientAction(false));
+    dispatch(partAction(false));
   };
   const showClients = () => {
     dispatch(serviceAction(false));
     dispatch(projectAction(false));
     dispatch(infoAction(false));
     dispatch(clientAction(true));
+    dispatch(partAction(false));
+  };
+  const showParts = () => {
+    dispatch(serviceAction(false));
+    dispatch(projectAction(false));
+    dispatch(infoAction(false));
+    dispatch(clientAction(false));
+    dispatch(partAction(true));
   };
 
   // styles
@@ -83,7 +95,9 @@ function Sections() {
         </Col>
         <Col sm="3">
           <Card style={styles.card}>
-            <Button style={styles.btn}>parts</Button>
+            <Button style={styles.btn} onClick={() => showParts()}>
+              parts
+            </Button>
           </Card>
         </Col>
         <Col sm="3">

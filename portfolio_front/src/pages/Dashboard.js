@@ -5,6 +5,7 @@ import Projects from "../components/dashboard/panels/projects/Projects";
 import Services from "../components/dashboard/panels/services/Sevices";
 import Informations from "../components/dashboard/panels/informations/Informations";
 import Clients from "../components/dashboard/panels/clients/Clients";
+import Parts from "../components/dashboard/panels/parts/Parts";
 import { useSelector } from "react-redux";
 
 function Dashboard() {
@@ -12,6 +13,7 @@ function Dashboard() {
   const ser = useSelector((state) => state.showServices.showServices);
   const info = useSelector((state) => state.showInfos.showInfos);
   const client = useSelector((state) => state.showClients.showClients);
+  const part = useSelector((state) => state.showParts.showParts);
   // styles
   const styles = {
     body: {
@@ -44,6 +46,7 @@ function Dashboard() {
         {ser === true && <Services />}
         {info === true && <Informations />}
         {client === true && <Clients />}
+        {part === true && <Parts />}
         {/* Panels */}
       </Container>
     </div>
