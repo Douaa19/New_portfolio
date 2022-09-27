@@ -95,7 +95,9 @@ function Sections() {
         </Col>
         <Col sm="3">
           <Card style={styles.card}>
-            <Button style={styles.btn}>clinets</Button>
+            <Button style={styles.btn} onClick={() => showClients()}>
+              clinets
+            </Button>
           </Card>
         </Col>
       </Row>
