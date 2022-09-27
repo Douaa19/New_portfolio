@@ -80,7 +80,7 @@ function Sevices() {
               <tr key={index}>
                 <td>{service.service_name}</td>
                 <td style={{width: "50%"}}>{service.description}</td>
-                <td className="d-flex justify-content-around" style={{border: "none"}}>
+                <td className="d-flex justify-content-around align-items-center" style={{border: "none"}}>
                   <Button className="bg-danger border-danger">
                     <MdDeleteForever />
                   </Button>
