@@ -92,7 +92,10 @@ function Projects() {
                 </td>
                 <td>{project.description}</td>
                 <td>{project.link}</td>
-                <td className="d-flex justify-content-around">
+                <td
+                  className="d-flex justify-content-around"
+                  style={{ border: "none" }}
+                >
                   <Button className="bg-danger border-danger">
                     <MdDeleteForever />
                   </Button>

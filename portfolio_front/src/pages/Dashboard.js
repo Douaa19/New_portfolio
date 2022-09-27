@@ -2,10 +2,12 @@ import React from "react";
 import { Container } from "reactstrap";
 import Sections from "../components/dashboard/Sections";
 import Projects from "../components/dashboard/panels/projects/Projects";
+import Services from "../components/dashboard/panels/services/Sevices";
 import { useSelector } from "react-redux";
 
 function Dashboard() {
   const prj = useSelector((state) => state.showProjects.showProjects);
+  const ser = useSelector((state) => state.showServices.showServices);
   // styles
   const styles = {
     body: {
@@ -35,6 +37,7 @@ function Dashboard() {
         <Sections />
         {/* Panels */}
         {prj === true && <Projects />}
+        {ser === true && <Services />}
         {/* Panels */}
       </Container>
     </div>

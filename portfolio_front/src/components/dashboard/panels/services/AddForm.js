@@ -48,9 +48,9 @@ function AddForm() {
           <FormGroup className="mb-3">
             <Input
               type="text"
-              placeholder="project name"
+              placeholder="service name"
               style={styles.input}
-              nmae="project_name"
+              nmae="service_name"
             />
           </FormGroup>
           <FormGroup className="mb-3">
@@ -61,16 +61,9 @@ function AddForm() {
               style={styles.input}
             />
           </FormGroup>
-          <FormGroup className="mb-3">
-            <Input type="url" placeholder="link project" style={styles.input} />
-          </FormGroup>
-          <FormGroup className="mb-3">
-            <Input type="checkbox" placeholder="technologies" />
-            html
-          </FormGroup>
           <div className="btns d-flex">
             <Button type="submit" style={styles.btn}>
-              add project
+              add service
             </Button>
           </div>
         </Form>

@@ -3,3 +3,4 @@ export const LOGOUT = "LOGOUT";
 export const SETROLE = "SETROLE";
 export const SETEMAIL = "SETEMAIL";
 export const SHOWPROJECT = "SHOWPROJECT";
+export const SHOWSERVICE = "SHOWSERVICE";
