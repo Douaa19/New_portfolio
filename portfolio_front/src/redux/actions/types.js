@@ -5,3 +5,4 @@ export const SETEMAIL = "SETEMAIL";
 export const SHOWPROJECT = "SHOWPROJECT";
 export const SHOWSERVICE = "SHOWSERVICE";
 export const SHOWINFOS = "SHOWINFOS";
+export const SHOWCLIENTS = "SHOWCLIENTS";
