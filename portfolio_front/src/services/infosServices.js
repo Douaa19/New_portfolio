@@ -13,3 +13,16 @@ export async function addInfo(data, header) {
       return response;
     });
 }
+
+// delete info
+export async function deleteInfo(Id, header) {
+  await axios
+    .delete(`${INFOS_URL}${Id}`, {
+      headers: {
+        Authorization: `Bearer ${header}`,
+      },
+    })
+    .then((response) => {
+      return response;
+    });
+}
