@@ -5,6 +5,7 @@ import {
   projectAction,
   serviceAction,
   infoAction,
+  clientAction,
 } from "../../redux/actions/sctions";
 
 function Sections() {
@@ -15,16 +16,25 @@ function Sections() {
     dispatch(projectAction(true));
     dispatch(serviceAction(false));
     dispatch(infoAction(false));
+    dispatch(clientAction(false));
   };
   const showService = () => {
     dispatch(projectAction(false));
     dispatch(serviceAction(true));
     dispatch(infoAction(false));
+    dispatch(clientAction(false));
   };
   const showInfos = () => {
     dispatch(serviceAction(false));
     dispatch(projectAction(false));
     dispatch(infoAction(true));
+    dispatch(clientAction(false));
+  };
+  const showClients = () => {
+    dispatch(serviceAction(false));
+    dispatch(projectAction(false));
+    dispatch(infoAction(false));
+    dispatch(clientAction(true));
   };
 
   // styles
