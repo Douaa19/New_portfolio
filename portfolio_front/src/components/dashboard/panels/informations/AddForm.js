@@ -1,40 +1,34 @@
 import React, { useState } from "react";
 import { Container, Form, Button, FormGroup, Input } from "reactstrap";
-import { addProject } from "../../../../services/projectsServices";
+import { addInfo } from "../../../../services/infosServices";
 
 function AddForm() {
   const header =
     "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMjg5MzIzMzkxMTIyNWJmZjBkNGQ2MSIsImVtYWlsIjoiZG91YS5sYXJpZkBnbWFpbC5jb20iLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2NjQyNzI1NTB9.YHatDqPv3bm4Ioejlwz16U-1zQ4x17kMoD4aLh1Grtk";
   //
   const [values, setValues] = useState({
-    project_name: "",
-    // technologies: [],
-    description: "",
-    link: "",
+    phone: "",
+    email: "",
+    address: "",
   });
 
   // handles
-  const handleName = (e) => {
-    setValues({ ...values, project_name: e.target.value });
+  const handlePhone = (e) => {
+    setValues({ ...values, phone: e.target.value });
   };
-  // const handleTechnos = (e) => {
-  //   setValues({ ...values, technologies: e.target.value });
-  // };
-  const handleDescription = (e) => {
-    setValues({ ...values, description: e.target.value });
+  const handleEmail = (e) => {
+    setValues({ ...values, email: e.target.value });
   };
-  const handleLink = (e) => {
-    setValues({ ...values, link: e.target.value });
+  const handleAddress = (e) => {
+    setValues({ ...values, address: e.target.value });
   };
 
   // handle submit function
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (values && header) {
-      await addProject(values, header).then((response) => {
-        window.location = "/dashboard";
-      });
-    }
+    await addInfo(values, header).then((response) => {
+      window.location = "/dashboard";
+    });
   };
 
   // styles
@@ -82,40 +76,36 @@ function AddForm() {
         <Form style={styles.form} method="POST" onSubmit={handleSubmit}>
           <FormGroup className="mb-3">
             <Input
-              type="text"
-              placeholder="project name"
+              type="phone"
+              placeholder="phone"
               style={styles.input}
               nmae="project_name"
-              value={values.project_name}
-              onChange={handleName}
+              value={values.phone}
+              onChange={handlePhone}
             />
           </FormGroup>
           <FormGroup className="mb-3">
             <Input
               id="exampleText"
-              type="textarea"
-              placeholder="description"
+              type="email"
+              placeholder="email"
               style={styles.input}
-              value={values.description}
-              onChange={handleDescription}
+              value={values.email}
+              onChange={handleEmail}
             />
           </FormGroup>
           <FormGroup className="mb-3">
             <Input
-              type="url"
-              placeholder="link project"
+              type="text"
+              placeholder="address"
               style={styles.input}
-              value={values.link}
-              onChange={handleLink}
+              value={values.address}
+              onChange={handleAddress}
             />
-          </FormGroup>
-          <FormGroup className="mb-3">
-            <Input type="checkbox" placeholder="technologies" />
-            html
           </FormGroup>
           <div className="btns d-flex">
             <Button type="submit" style={styles.btn}>
-              add project
+              add info
             </Button>
           </div>
         </Form>
