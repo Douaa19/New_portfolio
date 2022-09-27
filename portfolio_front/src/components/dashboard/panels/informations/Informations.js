@@ -7,7 +7,7 @@ import { MdDeleteForever, MdModeEdit } from "react-icons/md";
 import axios from "axios";
 import { useDispatch } from "react-redux";
 import { infoAction } from "../../../../redux/actions/sctions";
-import { deleteProject } from "../../../../services/projectsServices";
+import { deleteInfo } from "../../../../services/infosServices";
 const INFOS_URL = "http://localhost:8080/infos/";
 
 function Informations() {
@@ -91,7 +91,7 @@ function Informations() {
                   <Button
                     className="bg-danger border-danger"
                     onClick={() => {
-                      deleteProject(info._id, header).then((response) => {
+                      deleteInfo(info._id, header).then((response) => {
                         window.location = "/dashboard";
                       });
                     }}
