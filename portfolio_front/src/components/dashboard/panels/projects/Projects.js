@@ -101,7 +101,11 @@ function Projects() {
                 >
                   <Button
                     className="bg-danger border-danger"
-                    onClick={() => deleteProject(project._id, header)}
+                    onClick={() => {
+                      deleteProject(project._id, header).then((response) => {
+                        window.location = "/dashboard";
+                      });
+                    }}
                   >
                     <MdDeleteForever />
                   </Button>
