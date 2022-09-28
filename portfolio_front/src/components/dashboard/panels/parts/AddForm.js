@@ -11,9 +11,9 @@ function AddForm() {
     "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMjg5MzIzMzkxMTIyNWJmZjBkNGQ2MSIsImVtYWlsIjoiZG91YS5sYXJpZkBnbWFpbC5jb20iLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2NjQyNzI1NTB9.YHatDqPv3bm4Ioejlwz16U-1zQ4x17kMoD4aLh1Grtk";
   const optionList = [];
   //
-  const [values, setValues] = useState({
+  let [values, setValues] = useState({
     part_name: "",
-    technos: [],
+    technos_id: [],
   });
   const [selectedOptions, setSelectedOptions] = useState();
 
@@ -25,13 +25,13 @@ function AddForm() {
       }
     });
   }, []);
-  
+
   // create new array from technologies
   technologies.forEach((techno) => {
     optionList.push({
       value: techno.techno_name,
       label: techno.techno_name,
-      id: techno._id,
+      technos_id: techno._id,
     });
     return optionList;
   });
@@ -45,13 +45,19 @@ function AddForm() {
   };
 
   // handle submit function
+
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(values);
-
-    // await addPart(values, header).then((response) => {
-    //   window.location = "/dashboard";
-    // });
+    let technos_ids = [];
+    if (values) {
+      values.technos.forEach((element) => {
+        technos_ids.push(element.technos_id);
+      });
+      values.technos_id = technos_ids;
+      await addPart(values, header).then((response) => {
+        window.location = "/dashboard";
+      });
+    }
   };
 
   // styles

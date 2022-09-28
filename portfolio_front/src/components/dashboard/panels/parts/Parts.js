@@ -82,7 +82,15 @@ function Parts() {
             return (
               <tr key={index}>
                 <td>{part.part_name}</td>
-                <td style={{ width: "50%" }}>{part.technos}</td>
+                <td style={{ width: "50%" }}>
+                  {part.technos_id.map((techno, index) => {
+                    return (
+                      <>
+                        <span key={index}>{techno} </span>
+                      </>
+                    );
+                  })}
+                </td>
                 <td
                   className="d-flex justify-content-around align-items-center"
                   style={{ border: "none" }}
