@@ -71,7 +71,7 @@ function AddForm() {
     <>
       <Container style={styles.container}>
         <div className="title text-center">
-          <h4 style={styles.title}>Add project</h4>
+          <h4 style={styles.title}>Add Info</h4>
         </div>
         <Form style={styles.form} method="POST" onSubmit={handleSubmit}>
           <FormGroup className="mb-3">

@@ -71,7 +71,7 @@ function AddForm() {
     <>
       <Container style={styles.container}>
         <div className="title text-center">
-          <h4 style={styles.title}>Add project</h4>
+          <h4 style={styles.title}>thechno</h4>
         </div>
         <Form style={styles.form} method="POST" onSubmit={handleSubmit}>
           <FormGroup className="mb-3">
@@ -105,7 +105,7 @@ function AddForm() {
           </FormGroup>
           <div className="btns d-flex">
             <Button type="submit" style={styles.btn}>
-              add info
+              add thechno
             </Button>
           </div>
         </Form>
