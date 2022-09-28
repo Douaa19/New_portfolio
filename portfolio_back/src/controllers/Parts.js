@@ -1,12 +1,18 @@
-const { Part } = require("../models");
+const { Part, Technology } = require("../models");
 
 // get all parts
 const getParts = async (req, res) => {
-  await Part.find().then((parts) => {
-    if (!parts) {
-      res.json({ message: "Parts not found!" });
-    }
-    res.status(200).json(parts);
+  const parts = await Part.find();
+
+
+  parts.forEach((element) => {
+    console.log(element)
+    // let element
+    element.technos_id.forEach((id) => {
+      Technology.findById(id, (err, result) => {
+        // element.technos_name.push(result)
+      });
+    });
   });
 };
 
