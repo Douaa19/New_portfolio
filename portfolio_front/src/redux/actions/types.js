@@ -7,3 +7,4 @@ export const SHOWSERVICE = "SHOWSERVICE";
 export const SHOWINFOS = "SHOWINFOS";
 export const SHOWCLIENTS = "SHOWCLIENTS";
 export const SHOWPARTS = "SHOWPARTS";
+export const SHOWTECHNOS = "SHOWTECHNOS";

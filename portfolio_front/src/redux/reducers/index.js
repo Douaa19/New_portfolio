@@ -4,6 +4,7 @@ import serviceReducer from "./serviceReducer";
 import infoReducer from "./infoReducer";
 import clientReducer from "./clientReducer";
 import partReducer from "./partReducer";
+import technoReducer from "./technoReducer";
 
 export default combineReducers({
   showProjects: projectReducer,
@@ -11,4 +12,5 @@ export default combineReducers({
   showInfos: infoReducer,
   showClients: clientReducer,
   showParts: partReducer,
+  showTechnos: technoReducer,
 });
