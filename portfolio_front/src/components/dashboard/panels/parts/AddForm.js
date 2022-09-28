@@ -1,30 +1,57 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import { Container, Form, Button, FormGroup, Input } from "reactstrap";
 import { addPart } from "../../../../services/partsServices";
+import Select from "react-select";
 
 function AddForm() {
+  const TECHNOS_URL = "http://localhost:8080/technos/";
+  const [technologies, setTechnologies] = useState([]);
   const header =
     "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMjg5MzIzMzkxMTIyNWJmZjBkNGQ2MSIsImVtYWlsIjoiZG91YS5sYXJpZkBnbWFpbC5jb20iLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2NjQyNzI1NTB9.YHatDqPv3bm4Ioejlwz16U-1zQ4x17kMoD4aLh1Grtk";
+  const optionList = [];
   //
   const [values, setValues] = useState({
     part_name: "",
-    // technos: "",
+    technos: [],
+  });
+  const [selectedOptions, setSelectedOptions] = useState();
+
+  // fetch technos
+  useEffect(() => {
+    axios.get(`${TECHNOS_URL}`).then((result) => {
+      if (result) {
+        setTechnologies(result.data);
+      }
+    });
+  }, []);
+  
+  // create new array from technologies
+  technologies.forEach((techno) => {
+    optionList.push({
+      value: techno.techno_name,
+      label: techno.techno_name,
+      id: techno._id,
+    });
+    return optionList;
   });
 
   // handles
   const handleName = (e) => {
     setValues({ ...values, part_name: e.target.value });
   };
-  // const handleTachnos = (e) => {
-  //   setValues({ ...values, technos: e.target.value });
-  // };
+  const handleTachnos = (data) => {
+    setValues({ ...values, technos: data });
+  };
 
   // handle submit function
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await addPart(values, header).then((response) => {
-      window.location = "/dashboard";
-    });
+    console.log(values);
+
+    // await addPart(values, header).then((response) => {
+    //   window.location = "/dashboard";
+    // });
   };
 
   // styles
@@ -80,16 +107,15 @@ function AddForm() {
               onChange={handleName}
             />
           </FormGroup>
-          {/* <FormGroup className="mb-3">
-            <Input
-              id="exampleText"
-              type="email"
-              placeholder="email"
-              style={styles.input}
-              value={values.technos}
+          <FormGroup className="mb-3">
+            <Select
+              options={optionList}
+              placeholder="Select technos"
+              value={selectedOptions}
               onChange={handleTachnos}
+              isMulti
             />
-          </FormGroup> */}
+          </FormGroup>
           <div className="btns d-flex">
             <Button type="submit" style={styles.btn}>
               add part
