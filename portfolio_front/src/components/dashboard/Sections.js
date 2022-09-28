@@ -7,6 +7,7 @@ import {
   infoAction,
   clientAction,
   partAction,
+  technoAction,
 } from "../../redux/actions/sctions";
 
 function Sections() {
@@ -19,6 +20,7 @@ function Sections() {
     dispatch(infoAction(false));
     dispatch(clientAction(false));
     dispatch(partAction(false));
+    dispatch(technoAction(false));
   };
   const showService = () => {
     dispatch(projectAction(false));
@@ -26,6 +28,7 @@ function Sections() {
     dispatch(infoAction(false));
     dispatch(clientAction(false));
     dispatch(partAction(false));
+    dispatch(technoAction(false));
   };
   const showInfos = () => {
     dispatch(serviceAction(false));
@@ -33,6 +36,7 @@ function Sections() {
     dispatch(infoAction(true));
     dispatch(clientAction(false));
     dispatch(partAction(false));
+    dispatch(technoAction(false));
   };
   const showClients = () => {
     dispatch(serviceAction(false));
@@ -40,6 +44,7 @@ function Sections() {
     dispatch(infoAction(false));
     dispatch(clientAction(true));
     dispatch(partAction(false));
+    dispatch(technoAction(false));
   };
   const showParts = () => {
     dispatch(serviceAction(false));
@@ -47,6 +52,15 @@ function Sections() {
     dispatch(infoAction(false));
     dispatch(clientAction(false));
     dispatch(partAction(true));
+    dispatch(technoAction(false));
+  };
+  const showTechnos = () => {
+    dispatch(serviceAction(false));
+    dispatch(projectAction(false));
+    dispatch(infoAction(false));
+    dispatch(clientAction(false));
+    dispatch(partAction(false));
+    dispatch(technoAction(true));
   };
 
   // styles
@@ -90,7 +104,9 @@ function Sections() {
         </Col>
         <Col sm="3">
           <Card style={styles.card}>
-            <Button style={styles.btn}>tachnologies</Button>
+            <Button style={styles.btn} onClick={() => showTechnos()}>
+              tachnologies
+            </Button>
           </Card>
         </Col>
         <Col sm="3">

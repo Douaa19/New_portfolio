@@ -4,6 +4,7 @@ import {
   SHOWINFOS,
   SHOWCLIENTS,
   SHOWPARTS,
+  SHOWTECHNOS,
 } from "./types";
 
 export const projectAction = (show) => {
@@ -37,6 +38,13 @@ export const clientAction = (show) => {
 export const partAction = (show) => {
   return {
     type: SHOWPARTS,
+    payload: show,
+  };
+};
+
+export const technoAction = (show) => {
+  return {
+    type: SHOWTECHNOS,
     payload: show,
   };
 };
