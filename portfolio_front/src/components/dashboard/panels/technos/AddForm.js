@@ -1,33 +1,25 @@
 import React, { useState } from "react";
 import { Container, Form, Button, FormGroup, Input } from "reactstrap";
-import { addInfo } from "../../../../services/infosServices";
+import { addTechno } from "../../../../services/technosServices";
 
 function AddForm() {
   const header =
     "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMjg5MzIzMzkxMTIyNWJmZjBkNGQ2MSIsImVtYWlsIjoiZG91YS5sYXJpZkBnbWFpbC5jb20iLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2NjQyNzI1NTB9.YHatDqPv3bm4Ioejlwz16U-1zQ4x17kMoD4aLh1Grtk";
   //
   const [values, setValues] = useState({
-    phone: "",
-    email: "",
-    address: "",
+    techno_name: "",
   });
 
   // handles
-  const handlePhone = (e) => {
-    setValues({ ...values, phone: e.target.value });
-  };
-  const handleEmail = (e) => {
-    setValues({ ...values, email: e.target.value });
-  };
-  const handleAddress = (e) => {
-    setValues({ ...values, address: e.target.value });
+  const handleTechno = (e) => {
+    setValues({ ...values, techno_name: e.target.value });
   };
 
   // handle submit function
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await addInfo(values, header).then((response) => {
-      window.location = "/dashboard";
+    await addTechno(values, header).then((response) => {
+        window.location = "/dashboard";
     });
   };
 
@@ -71,36 +63,17 @@ function AddForm() {
     <>
       <Container style={styles.container}>
         <div className="title text-center">
-          <h4 style={styles.title}>thechno</h4>
+          <h4 style={styles.title}>add thechno</h4>
         </div>
         <Form style={styles.form} method="POST" onSubmit={handleSubmit}>
           <FormGroup className="mb-3">
             <Input
-              type="phone"
-              placeholder="phone"
-              style={styles.input}
-              nmae="project_name"
-              value={values.phone}
-              onChange={handlePhone}
-            />
-          </FormGroup>
-          <FormGroup className="mb-3">
-            <Input
-              id="exampleText"
-              type="email"
-              placeholder="email"
-              style={styles.input}
-              value={values.email}
-              onChange={handleEmail}
-            />
-          </FormGroup>
-          <FormGroup className="mb-3">
-            <Input
               type="text"
-              placeholder="address"
+              placeholder="technology"
               style={styles.input}
-              value={values.address}
-              onChange={handleAddress}
+              name="techno_name"
+              value={values.techno_name}
+              onChange={handleTechno}
             />
           </FormGroup>
           <div className="btns d-flex">

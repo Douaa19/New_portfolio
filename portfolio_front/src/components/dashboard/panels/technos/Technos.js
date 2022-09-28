@@ -7,7 +7,7 @@ import { MdDeleteForever, MdModeEdit } from "react-icons/md";
 import axios from "axios";
 import { useDispatch } from "react-redux";
 import { technoAction } from "../../../../redux/actions/sctions";
-import { deletePart } from "../../../../services/partsServices";
+import { deleteTechno } from "../../../../services/technosServices";
 const TECHNOS_URL = "http://localhost:8080/technos/";
 
 function Technos() {
@@ -33,12 +33,15 @@ function Technos() {
   };
 
   // show add project form
-  const addService = () => {
+  const addTech = () => {
     setTechno(true);
   };
 
   //   styles
   const styles = {
+    container: {
+      width: "50%",
+    },
     table: {
       color: "#FFF",
       textAlign: "center",
@@ -61,55 +64,70 @@ function Technos() {
     icon: {
       color: "red",
       cursor: "pointer",
+      display: "flex",
+      justifyContent: "end",
+    },
+    td: {
+      display: "flex",
+      justifyContent: "space-between",
+      alignItems: "center",
+      padding: "0.5rem 0.8rem",
+    },
+    deleteBtn: {
+      borderRadius: "50%",
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+      padding: "0.5rem",
     },
   };
 
   return (
     <>
-      <div className="exit d-flex justify-content-end">
-        <GiCancel onClick={() => hiddTechnos()} style={styles.icon} />
-      </div>
-      <Table style={styles.table}>
-        <thead>
-          <tr>
-            <th>name</th>
-            <th>Actions</th>
-          </tr>
-        </thead>
-        <tbody style={styles.body}>
-          {technos.map((techno, index) => {
-            return (
-              <tr key={index}>
-                <td>{techno.techno_name}</td>
-                <td
-                  className="d-flex justify-content-around align-items-center"
-                  style={{ border: "none" }}
-                >
-                  <Button
-                    className="bg-danger border-danger"
-                    onClick={() => {
-                      deletePart(techno._id, header).then((response) => {
-                        window.location = "/dashboard";
-                      });
-                    }}
-                  >
-                    <MdDeleteForever />
-                  </Button>
-                </td>
+      <div className="container" style={styles.container}>
+        <div className="exit d-flex justify-content-end">
+          <GiCancel onClick={() => hiddTechnos()} style={styles.icon} />
+        </div>
+        <div className="table d-flex justify-content-center">
+          <Table style={styles.table}>
+            <thead>
+              <tr>
+                <th>Technology</th>
               </tr>
-            );
-          })}
-        </tbody>
-      </Table>
-      <div className="addBtn d-flex justify-content-end">
-        <Button
-          className="bg-primary border-primary"
-          onClick={() => addService()}
-        >
-          <FaPlus />
-        </Button>
+            </thead>
+            <tbody style={styles.body}>
+              {technos.map((techno, index) => {
+                return (
+                  <tr key={index}>
+                    <td style={styles.td}>
+                      {techno.techno_name}{" "}
+                      <Button
+                        className="bg-danger border-danger"
+                        style={styles.deleteBtn}
+                        onClick={() => {
+                          deleteTechno(techno._id, header).then((response) => {
+                            window.location = "/dashboard";
+                          });
+                        }}
+                      >
+                        <MdDeleteForever />
+                      </Button>
+                    </td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </Table>
+        </div>
+        <div className="addBtn d-flex justify-content-end">
+          <Button
+            className="bg-primary border-primary"
+            onClick={() => addTech()}
+          >
+            <FaPlus />
+          </Button>
+        </div>
       </div>
-
       {/* Form add project */}
       {addTechno === true && <AddForm addTechno={addTechno} />}
       {/* Form add project */}
