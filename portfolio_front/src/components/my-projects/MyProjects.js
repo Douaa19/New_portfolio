@@ -26,7 +26,7 @@ function MyProjects() {
   };
 
   return (
-    <div style={{ backgroundColor: "#101010" }}>
+    <div style={{ backgroundColor: "#101010" }}  id="project">
       <Container style={styles.container}>
         <div className="sectionTitle">
           <h1 style={styles.big}>my projects</h1>

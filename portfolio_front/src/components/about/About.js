@@ -27,7 +27,7 @@ function About() {
   };
   // -----------------------
   return (
-    <div style={{ backgroundColor: "#101010" }}>
+    <div style={{ backgroundColor: "#101010" }} id="about">
       <Container style={styles.container}>
         <div className="image" style={styles.div_img}>
           <img src={Image} alt="img" style={styles.image} />

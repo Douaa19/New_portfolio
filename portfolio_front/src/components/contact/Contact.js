@@ -58,7 +58,7 @@ function Contact() {
   };
 
   return (
-    <div style={{ backgroundColor: "#101010" }}>
+    <div style={{ backgroundColor: "#101010" }} id="contact">
       <Container style={styles.container}>
         <div className="sectionTitle">
           <h1 style={styles.big}>contact me</h1>

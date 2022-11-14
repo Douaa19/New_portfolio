@@ -27,7 +27,7 @@ function MySkills() {
   };
 
   return (
-    <div style={{ backgroundColor: "#101010" }}>
+    <div style={{ backgroundColor: "#101010" }} id="skill">
       <Container style={styles.container}>
         <div className="sectionTitle">
           <h1 style={styles.big}>my skills</h1>

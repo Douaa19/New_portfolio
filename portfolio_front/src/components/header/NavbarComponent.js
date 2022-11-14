@@ -72,42 +72,42 @@ function NavbarComponent() {
           <div className="links" style={styles.links}>
             <Nav>
               <NavLink
-                href=""
-                style={link}
-                onMouseOver={() => hoverLink("home")}
-              >
-                home
-              </NavLink>
-              <NavLink
-                href=""
+                href="#about"
                 style={link}
                 onMouseOver={() => hoverLink("about")}
               >
                 about
               </NavLink>
               <NavLink
-                href=""
+                href="#service"
                 style={link}
                 onMouseOver={() => hoverLink("service")}
               >
                 service
               </NavLink>
               <NavLink
-                href=""
+                href="#skill"
                 style={link}
-                onMouseOver={() => hoverLink("portfolio")}
+                onMouseOver={() => hoverLink("skill")}
               >
-                portfolio
+                skill
               </NavLink>
               <NavLink
-                href=""
+                href="#project"
+                style={link}
+                onMouseOver={() => hoverLink("project")}
+              >
+                project
+              </NavLink>
+              <NavLink
+                href="#resume"
                 style={link}
                 onMouseOver={() => hoverLink("resume")}
               >
                 resume
               </NavLink>
               <NavLink
-                href=""
+                href="#contact"
                 style={navBtn}
                 onMouseOver={() => hoverBtn()}
                 onMouseOut={() => {

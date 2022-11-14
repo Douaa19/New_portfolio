@@ -26,7 +26,7 @@ function MyResume() {
   };
 
   return (
-    <div style={{ backgroundColor: "#101010" }}>
+    <div style={{ backgroundColor: "#101010" }} id="resume">
       <Container style={styles.container}>
         <div className="sectionTitle">
           <h1 style={styles.big}>my resume</h1>

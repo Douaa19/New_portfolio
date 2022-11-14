@@ -25,7 +25,7 @@ function MyServices() {
   };
 
   return (
-    <div style={{ backgroundColor: "#101010" }}>
+    <div style={{ backgroundColor: "#101010" }} id="service">
       <Container style={styles.container}>
         <div className="sectionTitle">
           <h1 style={styles.big}>my services</h1>

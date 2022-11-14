@@ -6,7 +6,7 @@ import MyProjects from "../components/my-projects/MyProjects";
 import MySkills from "../components/my-skills/MySkills";
 import MyResume from "../components/my-resume/MyResume";
 import Contact from "../components/contact/Contact";
-import { GrFacebookOption } from "react-icons/gr";
+import { SiUpwork, SiFiverr } from "react-icons/si";
 import { FaInstagram, FaLinkedinIn } from "react-icons/fa";
 
 function Home() {
@@ -25,7 +25,7 @@ function Home() {
       color: "#FF5959",
       display: "flex",
       justifyContent: "space-between",
-      width: "10rem",
+      width: "12rem",
     },
     divIcon: {
       border: "1px solid #FF5959",
@@ -50,7 +50,7 @@ function Home() {
     },
     span: {
       color: "#FF5959",
-      fontSize: "14px"
+      fontSize: "14px",
     },
   };
 
@@ -65,9 +65,14 @@ function Home() {
       <Contact />
       <div className="footer" style={styles.footer}>
         <div className="icons" style={styles.icons}>
-          <div className="iconFb" style={styles.divIcon}>
+          <div className="iconUp" style={styles.divIcon}>
             <a href="#" style={styles.address}>
-              <GrFacebookOption style={styles.icon} />
+              <SiUpwork style={styles.icon} />
+            </a>
+          </div>
+          <div className="iconFi" style={styles.divIcon}>
+            <a href="#" style={styles.address}>
+              <SiFiverr style={styles.icon} />
             </a>
           </div>
           <div className="iconInsta" style={styles.divIcon}>
