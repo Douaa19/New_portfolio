@@ -86,7 +86,7 @@ function Parts() {
                   {part.technos_id.map((techno, index) => {
                     return (
                       <>
-                        <span key={index}>{techno} </span>
+                        <span key={index}>{techno}</span>
                       </>
                     );
                   })}
